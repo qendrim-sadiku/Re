@@ -1,0 +1,41 @@
+
+body {
+	font-size: rem-calc($base-font-size);
+	line-height: rem-calc($base-line-height);
+	color: $blue-gray;
+}
+
+a {
+	transition: all 0.2s;
+}
+
+// Home-Section
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+.main {
+	position: relative;	
+	background-image: none, url('../images/bitmap.jpg');	
+	background-size: cover;
+	padding-bottom: 500px;
+	max-width: 100%;
+	
+	.container {
+	@include grid-row();	
+		h2 {
+			font-family: $font-family;
+			font-size: 40px;
+			margin:auto;
+			text-align: center;
+			color:$white !important;
+			z-index: 1;
+			color: $white !important;
+			font-weight: 300;
+		}
+		.home-forms {
+			display: flex;
+			margin-top: 95px;
+			margin-left: 190px;
+
+		}
+	}
+}	

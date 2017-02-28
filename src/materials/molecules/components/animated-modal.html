@@ -1,0 +1,21 @@
+ <!--Call your modal-->
+ <div class="form-modal">    
+    <form action=""> 
+      <input type="submit" id="demo02" href="#modal-02" class="open-modal"/>
+    </form>
+ </div> 
+
+
+
+<div id="modal-02" class="modal-bg">
+    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+    <div  id="btn-close-modal" class="close-modal-02"> 
+        <a href="#" class="close-modal">
+        	 <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+    </div>
+    
+    <div class="modal-content">
+       {{> header}}
+    </div>
+</div>

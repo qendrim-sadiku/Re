@@ -1,0 +1,19 @@
+.transparent-header {
+	@include grid-row();
+	z-index: 1;
+	margin-bottom: 188px;
+	.header-padding {
+		margin-top: 51px;
+		.logo-section {
+			display: flex;
+			float: left;
+			h2 {
+				margin-top: 0px;
+				margin-left: 10px;
+				font-size: 29px;
+				font-weight: 400;
+				font-family: $font-family;
+			}
+		}
+	}		
+}	
