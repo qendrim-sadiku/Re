@@ -39,3 +39,41 @@ a {
 		}
 	}
 }	
+
+// FlexSlider
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+
+.flexslider {
+	margin-left: -25px;
+	
+	.slides {
+		li {
+			position: relative;
+		}
+	}
+	.flex-caption {
+		position: absolute;
+		bottom: 10px;
+		right: 40px;
+		padding-right: 50px;
+		padding-left: 50px;
+		padding-top:17px;
+		padding-bottom:17px;
+		background-color: $white;
+		color: $black;
+		font-size: 15px;
+		i {
+			color: $black;
+			margin-right: 20px;
+			font-size: 20px;
+		}
+	}
+}
+
+.flex-direction-nav {
+	display: none;
+}
+.flex-control-paging {
+	display: none;
+}

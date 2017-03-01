@@ -1,0 +1,54 @@
+.location {
+	background: $white;
+	padding-top: 68px;
+	.container {
+		@include grid-row();
+		border-bottom:2px solid #eaeaea;
+		padding-bottom: 69px;
+		.location-info {
+			@include grid-column(5);
+			h4 {
+				font-size: 16px;
+				color: #0a184a;
+				margin-bottom: 37px;
+				text-align: left;
+			}
+			p {
+				text-align:left; 
+				color: #0a184a;
+				opacity: 0.5;
+				font-size: 15px;
+				font-weight: 300;
+			}
+		}
+	}
+	.map-info {
+		float: left;
+		margin-left: 100px;
+		margin-bottom: 30px;
+		img {
+			float: left;
+			margin-top: 0px;
+			margin-right: 9px;
+		}
+		h4 {
+			float: right;
+			color: #0a184a;
+			font-size: 15px;
+			
+		}
+	}
+	.map {
+		@include grid-column(7);
+		width: 600px;
+		height: 350px;
+		
+		position: relative;
+
+		.google-map {
+			@include scut-coords(0 0 0 0);
+			position: absolute !important;
+		}
+	}
+}
+

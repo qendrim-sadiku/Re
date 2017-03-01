@@ -14,6 +14,8 @@
 	<!-- /toolkit styles -->
 	
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">	
+	
+	<link rel="stylesheet" href="/assets/vendor/flexslider/flexslider.css">	 
 
 </head>
 <body>
@@ -83,6 +85,9 @@
 											</li>
 											<li>
 												<a href="atoms.html#buttons.button">Button</a>
+											</li>
+											<li>
+												<a href="atoms.html#buttons.round-button">Round Button</a>
 											</li>
 									</ul>
 							</li>
@@ -176,6 +181,9 @@
 												<a href="molecules.html#components.hero">Hero</a>
 											</li>
 											<li>
+												<a href="molecules.html#components.tab">Tab</a>
+											</li>
+											<li>
 												<a href="molecules.html#components.tooltip">Tooltip</a>
 											</li>
 									</ul>
@@ -253,7 +261,27 @@
 		
 							</li>
 								<li>
+								<a href="organisms.html#header-with-result">Header With Result</a>
+		
+							</li>
+								<li>
+								<a href="organisms.html#info">Info</a>
+		
+							</li>
+								<li>
+								<a href="organisms.html#location">Location</a>
+		
+							</li>
+								<li>
 								<a href="organisms.html#modal">Modal</a>
+		
+							</li>
+								<li>
+								<a href="organisms.html#reservation">Reservation</a>
+		
+							</li>
+								<li>
+								<a href="organisms.html#slider">Slider</a>
 		
 							</li>
 								<li>
@@ -267,16 +295,13 @@
 					<a href="pages.html" class="f-menu__heading">Pages</a>
 					<ul>
 						<li>
-							<a href="pages/browse-events.html" target="_blank">Browse Events</a>
-						</li>
-						<li>
 							<a href="pages/home.html" target="_blank">Home</a>
 						</li>
 						<li>
-							<a href="pages/login.html" target="_blank">Login</a>
+							<a href="pages/my-profile.html" target="_blank">My Profile</a>
 						</li>
 						<li>
-							<a href="pages/my-profile.html" target="_blank">My Profile</a>
+							<a href="pages/result.html" target="_blank">Result</a>
 						</li>
 						<li>
 							<a href="pages/single-event.html" target="_blank">Single Event</a>
@@ -496,7 +521,7 @@
 	<!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
 	<div id="btn-close-modal" class="close-modal-02">
 		<a href="#" class="close-modal">
-			<i class="fa fa-times" aria-hidden="true"></i>
+			<p><i class="fa fa-times" aria-hidden="true"></i></p>
 		</a>
 	</div>
 
@@ -540,8 +565,331 @@
 				</div>
 			</header>
 		</div>
+		<!-- Place somewhere in the <body> of your page -->
+		<div class="flexslider">
+			<ul class="slides">
+				<li>
+					<img src="undefined/assets/toolkit/images/full-wall.jpg">
+					<p class="flex-caption"><i class="fa fa-phone" aria-hidden="true"></i> 044-123-456</p>
+				</li>
+
+				<li>
+					<img src="undefined/assets/toolkit/images/full-wall.jpg">
+					<p class="flex-caption"><i class="fa fa-phone" aria-hidden="true"></i> 044-123-456</p>
+				</li>
+				<li>
+					<img src="undefined/assets/toolkit/images/full-wall.jpg">
+					<p class="flex-caption"><i class="fa fa-phone" aria-hidden="true"></i> 044-123-456</p>
+
+
+
+				</li>
+				<li>
+					<img src="undefined/assets/toolkit/images/full-wall.jpg">
+					<p class="flex-caption"><i class="fa fa-phone" aria-hidden="true"></i> 044-123-456</p>
+
+
+				</li>
+			</ul>
+		</div>
+		<div class="info">
+			<div class="container">
+				<div class="text-info">
+					<h3>Prince Sport Center</h3>
+					<div class="user-info">
+						<img src=" undefined/assets/toolkit/images/user-info.svg " alt="">
+						<span class="admin-info">Aktiv Para 12min</span>
+					</div>
+				</div>
+				<div class="info-stuf">
+					<div class="each-stuf">
+						<img src="undefined/assets/toolkit/images/cost.svg">
+						<span>25 Euro/nata</span>
+						<br/>
+						<span>20 Euro/dita</span>
+					</div>
+					<div class="each-stuf ">
+						<img src="undefined/assets/toolkit/images/transporti.svg" class="buss-img">
+						<span class="trans">Tranport</span>
+					</div>
+					<div class="each-stuf">
+						<img src="undefined/assets/toolkit/images/dorezat.svg">
+						<span class="dorzat">Dorezat</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="location">
+			<div class="container">
+				<div class="location-info">
+					<h4>Rreth Fushes</h4>
+					<p> Santiago Bernabeu is one of the world's most famous and prestigious football venues. It has hosted the European Cup final on four occasions: in 1957, 1969, 1980, the UEFA Champions League Final in 2010.
+					</p>
+					<p>
+						On 16 October 2013, Pérez announced that Real is seeking to sell the naming rights for its stadium and looking for a sponsor for the €400 million project. The proposed design of the stadium renovation, produced by German architects GMP, was unveiled on
+						31 January 2014.
+					</p>
+				</div>
+
+				<div class="map-info">
+					<h4>Rr. Mbretresha Teutë, Prishtinë</h4>
+					<img src="undefined/assets/toolkit/images/mark.svg">
+				</div>
+				<div class="map">
+					<div class="google-map"></div>
+				</div>
+
+
+			</div>
+		</div>
+		<div class="terminet">
+			<div class="container">
+
+				<h4 class="res-heading">Terminet:</h4>
+
+				<div class="tab">
+
+					<ul class="tabs">
+						<li><a href="#">Sot</a></li>
+						<li><a href="#">Neser</a></li>
+						<li><a href="#">E Enjte</a></li>
+						<li><a href="#">E Premte</a></li>
+						<li><a href="#">E Shtune</a></li>
+						<li><a href="#">E Diel</a></li>
+						<li><a href="#">E Hënë</a></li>
+					</ul>
+					<!-- / tabs -->
+
+					<div class="tab_content">
+
+						<div class="tabs_item">
+							<div class="free">
+
+								<h4>Të lira:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+							<div class="busy">
+								<h4>Të nxëna:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+						</div>
+						<!-- / tabs_item -->
+
+						<div class="tabs_item">
+							<div class="free">
+
+								<h4>Të lira:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+							<div class="busy">
+								<h4>Të nxëna:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+						</div>
+						<!-- / tabs_item -->
+
+						<div class="tabs_item">
+							<div class="free">
+
+								<h4>Të lira:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+							<div class="busy">
+								<h4>Të nxëna:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+						</div>
+						<!-- / tabs_item -->
+
+						<div class="tabs_item">
+							<div class="free">
+
+								<h4>Të lira:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+							<div class="busy">
+								<h4>Të nxëna:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+						</div>
+						<!-- / tabs_item -->
+
+						<div class="tabs_item">
+							<div class="free">
+
+								<h4>Të lira:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+							<div class="busy">
+								<h4>Të nxëna:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+						</div>
+						<!-- / tabs_item -->
+
+						<div class="tabs_item">
+							<div class="free">
+
+								<h4>Të lira:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+							<div class="busy">
+								<h4>Të nxëna:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+						</div>
+						<!-- / tabs_item -->
+						<div class="tabs_item">
+							<div class="free">
+
+								<h4>Të lira:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+							<div class="busy">
+								<h4>Të nxëna:</h4>
+								<div class="item-div">
+									<a href="#" class="button">Ora:15:00</a>
+									<a href="#" class="button">Ora:16:00</a>
+									<a href="#" class="button">Ora:17:00</a>
+									<a href="#" class="button">Ora:18:00</a>
+									<a href="#" class="button">Ora:19:00</a>
+								</div>
+							</div>
+						</div>
+						<!-- / tabs_item -->
+					</div>
+					<!-- / tab -->
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;!--Call your modal--&gt;
@@ -557,7 +905,7 @@
 	&lt;!--&quot;THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID--&gt;
 	&lt;div id&#x3D;&quot;btn-close-modal&quot; class&#x3D;&quot;close-modal-02&quot;&gt;
 		&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;close-modal&quot;&gt;
-			&lt;i class&#x3D;&quot;fa fa-times&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+			&lt;p&gt;&lt;i class&#x3D;&quot;fa fa-times&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/p&gt;
 		&lt;/a&gt;
 	&lt;/div&gt;
 
@@ -601,8 +949,331 @@
 				&lt;/div&gt;
 			&lt;/header&gt;
 		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+		&lt;!-- Place somewhere in the &lt;body&gt; of your page --&gt;
+		&lt;div class&#x3D;&quot;flexslider&quot;&gt;
+			&lt;ul class&#x3D;&quot;slides&quot;&gt;
+				&lt;li&gt;
+					&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/full-wall.jpg&quot;&gt;
+					&lt;p class&#x3D;&quot;flex-caption&quot;&gt;&lt;i class&#x3D;&quot;fa fa-phone&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; 044-123-456&lt;/p&gt;
+				&lt;/li&gt;
+
+				&lt;li&gt;
+					&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/full-wall.jpg&quot;&gt;
+					&lt;p class&#x3D;&quot;flex-caption&quot;&gt;&lt;i class&#x3D;&quot;fa fa-phone&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; 044-123-456&lt;/p&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/full-wall.jpg&quot;&gt;
+					&lt;p class&#x3D;&quot;flex-caption&quot;&gt;&lt;i class&#x3D;&quot;fa fa-phone&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; 044-123-456&lt;/p&gt;
+
+
+
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/full-wall.jpg&quot;&gt;
+					&lt;p class&#x3D;&quot;flex-caption&quot;&gt;&lt;i class&#x3D;&quot;fa fa-phone&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; 044-123-456&lt;/p&gt;
+
+
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;info&quot;&gt;
+			&lt;div class&#x3D;&quot;container&quot;&gt;
+				&lt;div class&#x3D;&quot;text-info&quot;&gt;
+					&lt;h3&gt;Prince Sport Center&lt;/h3&gt;
+					&lt;div class&#x3D;&quot;user-info&quot;&gt;
+						&lt;img src&#x3D;&quot; undefined/assets/toolkit/images/user-info.svg &quot; alt&#x3D;&quot;&quot;&gt;
+						&lt;span class&#x3D;&quot;admin-info&quot;&gt;Aktiv Para 12min&lt;/span&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;info-stuf&quot;&gt;
+					&lt;div class&#x3D;&quot;each-stuf&quot;&gt;
+						&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/cost.svg&quot;&gt;
+						&lt;span&gt;25 Euro/nata&lt;/span&gt;
+						&lt;br/&gt;
+						&lt;span&gt;20 Euro/dita&lt;/span&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;each-stuf &quot;&gt;
+						&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/transporti.svg&quot; class&#x3D;&quot;buss-img&quot;&gt;
+						&lt;span class&#x3D;&quot;trans&quot;&gt;Tranport&lt;/span&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;each-stuf&quot;&gt;
+						&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/dorezat.svg&quot;&gt;
+						&lt;span class&#x3D;&quot;dorzat&quot;&gt;Dorezat&lt;/span&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;location&quot;&gt;
+			&lt;div class&#x3D;&quot;container&quot;&gt;
+				&lt;div class&#x3D;&quot;location-info&quot;&gt;
+					&lt;h4&gt;Rreth Fushes&lt;/h4&gt;
+					&lt;p&gt; Santiago Bernabeu is one of the world&#x27;s most famous and prestigious football venues. It has hosted the European Cup final on four occasions: in 1957, 1969, 1980, the UEFA Champions League Final in 2010.
+					&lt;/p&gt;
+					&lt;p&gt;
+						On 16 October 2013, Pérez announced that Real is seeking to sell the naming rights for its stadium and looking for a sponsor for the €400 million project. The proposed design of the stadium renovation, produced by German architects GMP, was unveiled on
+						31 January 2014.
+					&lt;/p&gt;
+				&lt;/div&gt;
+
+				&lt;div class&#x3D;&quot;map-info&quot;&gt;
+					&lt;h4&gt;Rr. Mbretresha Teutë, Prishtinë&lt;/h4&gt;
+					&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/mark.svg&quot;&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;map&quot;&gt;
+					&lt;div class&#x3D;&quot;google-map&quot;&gt;&lt;/div&gt;
+				&lt;/div&gt;
+
+
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;terminet&quot;&gt;
+			&lt;div class&#x3D;&quot;container&quot;&gt;
+
+				&lt;h4 class&#x3D;&quot;res-heading&quot;&gt;Terminet:&lt;/h4&gt;
+
+				&lt;div class&#x3D;&quot;tab&quot;&gt;
+
+					&lt;ul class&#x3D;&quot;tabs&quot;&gt;
+						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Sot&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Neser&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Enjte&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Premte&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Shtune&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Diel&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Hënë&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+					&lt;!-- / tabs --&gt;
+
+					&lt;div class&#x3D;&quot;tab_content&quot;&gt;
+
+						&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+							&lt;div class&#x3D;&quot;free&quot;&gt;
+
+								&lt;h4&gt;Të lira:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;busy&quot;&gt;
+								&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;!-- / tabs_item --&gt;
+
+						&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+							&lt;div class&#x3D;&quot;free&quot;&gt;
+
+								&lt;h4&gt;Të lira:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;busy&quot;&gt;
+								&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;!-- / tabs_item --&gt;
+
+						&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+							&lt;div class&#x3D;&quot;free&quot;&gt;
+
+								&lt;h4&gt;Të lira:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;busy&quot;&gt;
+								&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;!-- / tabs_item --&gt;
+
+						&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+							&lt;div class&#x3D;&quot;free&quot;&gt;
+
+								&lt;h4&gt;Të lira:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;busy&quot;&gt;
+								&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;!-- / tabs_item --&gt;
+
+						&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+							&lt;div class&#x3D;&quot;free&quot;&gt;
+
+								&lt;h4&gt;Të lira:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;busy&quot;&gt;
+								&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;!-- / tabs_item --&gt;
+
+						&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+							&lt;div class&#x3D;&quot;free&quot;&gt;
+
+								&lt;h4&gt;Të lira:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;busy&quot;&gt;
+								&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;!-- / tabs_item --&gt;
+						&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+							&lt;div class&#x3D;&quot;free&quot;&gt;
+
+								&lt;h4&gt;Të lira:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class&#x3D;&quot;busy&quot;&gt;
+								&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+								&lt;div class&#x3D;&quot;item-div&quot;&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+									&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;!-- / tabs_item --&gt;
+					&lt;/div&gt;
+					&lt;!-- / tab --&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;</code></pre>
 </div>
 
 		</div>
@@ -679,6 +1350,500 @@
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup"></code></pre>
+</div>
+
+		</div>
+		<div class="f-item-group" id="components.tab">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Tab</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<div class="tab">
+
+	<ul class="tabs">
+		<li><a href="#">Sot</a></li>
+		<li><a href="#">Neser</a></li>
+		<li><a href="#">E Enjte</a></li>
+		<li><a href="#">E Premte</a></li>
+		<li><a href="#">E Shtune</a></li>
+		<li><a href="#">E Diel</a></li>
+		<li><a href="#">E Hënë</a></li>
+	</ul>
+	<!-- / tabs -->
+
+	<div class="tab_content">
+
+		<div class="tabs_item">
+			<div class="free">
+
+				<h4>Të lira:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+			<div class="busy">
+				<h4>Të nxëna:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+		</div>
+		<!-- / tabs_item -->
+
+		<div class="tabs_item">
+			<div class="free">
+
+				<h4>Të lira:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+			<div class="busy">
+				<h4>Të nxëna:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+		</div>
+		<!-- / tabs_item -->
+
+		<div class="tabs_item">
+			<div class="free">
+
+				<h4>Të lira:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+			<div class="busy">
+				<h4>Të nxëna:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+		</div>
+		<!-- / tabs_item -->
+
+		<div class="tabs_item">
+			<div class="free">
+
+				<h4>Të lira:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+			<div class="busy">
+				<h4>Të nxëna:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+		</div>
+		<!-- / tabs_item -->
+
+		<div class="tabs_item">
+			<div class="free">
+
+				<h4>Të lira:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+			<div class="busy">
+				<h4>Të nxëna:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+		</div>
+		<!-- / tabs_item -->
+
+		<div class="tabs_item">
+			<div class="free">
+
+				<h4>Të lira:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+			<div class="busy">
+				<h4>Të nxëna:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+		</div>
+		<!-- / tabs_item -->
+		<div class="tabs_item">
+			<div class="free">
+
+				<h4>Të lira:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+			<div class="busy">
+				<h4>Të nxëna:</h4>
+				<div class="item-div">
+					<a href="#" class="button">Ora:15:00</a>
+					<a href="#" class="button">Ora:16:00</a>
+					<a href="#" class="button">Ora:17:00</a>
+					<a href="#" class="button">Ora:18:00</a>
+					<a href="#" class="button">Ora:19:00</a>
+				</div>
+			</div>
+		</div>
+		<!-- / tabs_item -->
+	</div>
+	<!-- / tab -->
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;tab&quot;&gt;
+
+	&lt;ul class&#x3D;&quot;tabs&quot;&gt;
+		&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Sot&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Neser&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Enjte&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Premte&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Shtune&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Diel&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;E Hënë&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;!-- / tabs --&gt;
+
+	&lt;div class&#x3D;&quot;tab_content&quot;&gt;
+
+		&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+			&lt;div class&#x3D;&quot;free&quot;&gt;
+
+				&lt;h4&gt;Të lira:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;busy&quot;&gt;
+				&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- / tabs_item --&gt;
+
+		&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+			&lt;div class&#x3D;&quot;free&quot;&gt;
+
+				&lt;h4&gt;Të lira:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;busy&quot;&gt;
+				&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- / tabs_item --&gt;
+
+		&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+			&lt;div class&#x3D;&quot;free&quot;&gt;
+
+				&lt;h4&gt;Të lira:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;busy&quot;&gt;
+				&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- / tabs_item --&gt;
+
+		&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+			&lt;div class&#x3D;&quot;free&quot;&gt;
+
+				&lt;h4&gt;Të lira:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;busy&quot;&gt;
+				&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- / tabs_item --&gt;
+
+		&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+			&lt;div class&#x3D;&quot;free&quot;&gt;
+
+				&lt;h4&gt;Të lira:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;busy&quot;&gt;
+				&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- / tabs_item --&gt;
+
+		&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+			&lt;div class&#x3D;&quot;free&quot;&gt;
+
+				&lt;h4&gt;Të lira:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;busy&quot;&gt;
+				&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- / tabs_item --&gt;
+		&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+			&lt;div class&#x3D;&quot;free&quot;&gt;
+
+				&lt;h4&gt;Të lira:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;busy&quot;&gt;
+				&lt;h4&gt;Të nxëna:&lt;/h4&gt;
+				&lt;div class&#x3D;&quot;item-div&quot;&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:15:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:16:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:17:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:18:00&lt;/a&gt;
+					&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;button&quot;&gt;Ora:19:00&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- / tabs_item --&gt;
+	&lt;/div&gt;
+	&lt;!-- / tab --&gt;</code></pre>
 </div>
 
 		</div>

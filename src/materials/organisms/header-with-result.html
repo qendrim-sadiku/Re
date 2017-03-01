@@ -1,0 +1,18 @@
+
+<div class="header-with-result">
+	<header class="header">
+		<div class="header-padding">		
+			<div class="logo-section">		
+				<img src="{{image baseurl 'soccer.svg'}}" class="logo">
+				<h2>Terminet</h2>
+			</div>
+			{{> modal }}			
+		</div>
+	</header>
+	<div class="home-forms">
+	{{> forms.select }}
+	{{> forms.days-select }}
+	{{> forms.hours-select }}
+	{{> components.animated-modal }}
+	</div>
+</div>

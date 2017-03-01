@@ -1,0 +1,59 @@
+.info {
+	background: $white;
+	.container {
+		padding-top: 26px;
+		padding-bottom: 26px;
+		@include grid-row();
+		border-bottom: 2px solid #eaeaea; 
+		display: flex;
+		.text-info {
+			h3 {
+				color: $black;
+				margin-bottom: 20px;
+				font-size: 30px;
+			}
+			.user-info {
+						
+				margin-left: -160px;				
+				.admin-info {
+					margin-left: 10px;
+					line-height: 20px;
+					color: #0a184a;
+
+					img {
+						display: flex;
+					}
+				}
+			}	
+		}
+		.info-stuf {
+			display: flex;
+			vertical-align: middle;
+			margin-left: 142px;
+			margin-top: 15px;
+			.each-stuf {
+				padding-left:90px; 
+				span {
+					margin-left: 19px;
+					line-height: 25px;
+					color: #0a184a;
+					font-size: 15px;
+					font-weight: 300;
+				}
+				.dorzat {
+					line-height: 40px;
+				}
+				img {
+					float: left; 
+				}
+				.buss-img {
+					margin-top: 10px;
+					
+				}
+				.trans {
+					line-height: 40px;
+				}
+			}
+		}
+	}
+}

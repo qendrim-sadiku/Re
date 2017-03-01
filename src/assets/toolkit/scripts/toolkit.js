@@ -35,6 +35,11 @@ var foundationTabs = require('../../vendor/foundation-sites/js/foundation.tabs.j
 //require('smoothstate/jquery.smoothState.min.js');
 // var smoothState = require('./jquery.smoothState.min.js');
 
+// Loading flexslider from node
+var flexslider = require ('../../vendor/flexslider/jquery.flexslider-min.js');	
+var flexslider = require ('../../vendor/flexslider/jquery.flexslider-min.js');	
+
+	
 // console.log($);
 // $('h1').fadeOut(2000);
 
@@ -48,6 +53,7 @@ require('./modules/tabs');
 require('./modules/file-input');
 require('./modules/animatedModal');
 require('./modules/modal');
+require('./modules/slider');
 
 // Finally, you can drop test JavaScript here...
 $(document).ready(function () {

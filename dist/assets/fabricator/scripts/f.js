@@ -139,7 +139,7 @@
 		/**
 	  * @return {Array} Sorted array of menu item 'ids'
 	  */
-		var parsedItems = function parsedItems() {
+		var parsedItems = function () {
 
 			var items = [],
 			    id,
@@ -169,7 +169,7 @@
 		/**
 	  * Match the 'id' in the window location with the menu item, set menu item as active
 	  */
-		var setActive = function setActive() {
+		var setActive = function () {
 
 			var href = window.location.href,
 			    items = parsedItems(),
@@ -224,7 +224,7 @@
 		var options = fabricator.getOptions();
 
 		// toggle classes on certain elements
-		var toggleClasses = function toggleClasses() {
+		var toggleClasses = function () {
 			options.menu = !fabricator.dom.root.classList.contains('f-menu-active');
 			fabricator.dom.root.classList.toggle('f-menu-active');
 
@@ -247,7 +247,7 @@
 		});
 
 		// close menu when clicking on item (for collapsed menu view)
-		var closeMenu = function closeMenu() {
+		var closeMenu = function () {
 			if (!window.matchMedia(fabricator.options.mq).matches) {
 				toggleClasses();
 			}
@@ -277,7 +277,7 @@
 		var options = fabricator.getOptions();
 
 		// toggle all
-		var toggleAllItems = function toggleAllItems(type, value) {
+		var toggleAllItems = function (type, value) {
 
 			var button = document.querySelector('.f-controls [data-f-toggle-control=' + type + ']'),
 			    _items = items[type];
@@ -336,7 +336,7 @@
 		var itemToggleSingle = document.querySelectorAll('.f-item-group [data-f-toggle-control]');
 
 		// toggle single
-		var toggleSingleItemCode = function toggleSingleItemCode(e) {
+		var toggleSingleItemCode = function (e) {
 			var group = this.parentNode.parentNode.parentNode,
 			    type = e.currentTarget.getAttribute('data-f-toggle-control');
 
@@ -357,7 +357,7 @@
 
 		var codeBlocks = document.querySelectorAll('.f-item-code');
 
-		var select = function select(block) {
+		var select = function (block) {
 			var selection = window.getSelection();
 			var range = document.createRange();
 			range.selectNodeContents(block.querySelector('code'));
@@ -382,7 +382,7 @@
 		var mq = window.matchMedia(fabricator.options.mq);
 
 		// if small screen
-		var mediaChangeHandler = function mediaChangeHandler(list) {
+		var mediaChangeHandler = function (list) {
 			if (!list.matches) {
 				root.classList.remove('f-menu-active');
 			} else {
@@ -415,7 +415,7 @@
 			});
 		}
 
-		var setActiveAccordion = function setActiveAccordion(which) {
+		var setActiveAccordion = function (which) {
 			var classList = which.currentTarget.parentNode.classList;
 
 			if (classList.toString().indexOf('is-open') > 0) {
