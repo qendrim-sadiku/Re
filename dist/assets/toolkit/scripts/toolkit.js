@@ -7611,90 +7611,34 @@
 	        return doneResult();
 	      }
 
+	      context.method = method;
+	      context.arg = arg;
+
 	      while (true) {
 	        var delegate = context.delegate;
 	        if (delegate) {
-	          if (method === "return" ||
-	              (method === "throw" && delegate.iterator[method] === undefined)) {
-	            // A return or throw (when the delegate iterator has no throw
-	            // method) always terminates the yield* loop.
-	            context.delegate = null;
-
-	            // If the delegate iterator has a return method, give it a
-	            // chance to clean up.
-	            var returnMethod = delegate.iterator["return"];
-	            if (returnMethod) {
-	              var record = tryCatch(returnMethod, delegate.iterator, arg);
-	              if (record.type === "throw") {
-	                // If the return method threw an exception, let that
-	                // exception prevail over the original return or throw.
-	                method = "throw";
-	                arg = record.arg;
-	                continue;
-	              }
-	            }
-
-	            if (method === "return") {
-	              // Continue with the outer return, now that the delegate
-	              // iterator has been terminated.
-	              continue;
-	            }
+	          var delegateResult = maybeInvokeDelegate(delegate, context);
+	          if (delegateResult) {
+	            if (delegateResult === ContinueSentinel) continue;
+	            return delegateResult;
 	          }
-
-	          var record = tryCatch(
-	            delegate.iterator[method],
-	            delegate.iterator,
-	            arg
-	          );
-
-	          if (record.type === "throw") {
-	            context.delegate = null;
-
-	            // Like returning generator.throw(uncaught), but without the
-	            // overhead of an extra function call.
-	            method = "throw";
-	            arg = record.arg;
-	            continue;
-	          }
-
-	          // Delegate generator ran and handled its own exceptions so
-	          // regardless of what the method was, we continue as if it is
-	          // "next" with an undefined arg.
-	          method = "next";
-	          arg = undefined;
-
-	          var info = record.arg;
-	          if (info.done) {
-	            context[delegate.resultName] = info.value;
-	            context.next = delegate.nextLoc;
-	          } else {
-	            state = GenStateSuspendedYield;
-	            return info;
-	          }
-
-	          context.delegate = null;
 	        }
 
-	        if (method === "next") {
+	        if (context.method === "next") {
 	          // Setting context._sent for legacy support of Babel's
 	          // function.sent implementation.
-	          context.sent = context._sent = arg;
+	          context.sent = context._sent = context.arg;
 
-	        } else if (method === "throw") {
+	        } else if (context.method === "throw") {
 	          if (state === GenStateSuspendedStart) {
 	            state = GenStateCompleted;
-	            throw arg;
+	            throw context.arg;
 	          }
 
-	          if (context.dispatchException(arg)) {
-	            // If the dispatched exception was caught by a catch block,
-	            // then let that catch block handle the exception normally.
-	            method = "next";
-	            arg = undefined;
-	          }
+	          context.dispatchException(context.arg);
 
-	        } else if (method === "return") {
-	          context.abrupt("return", arg);
+	        } else if (context.method === "return") {
+	          context.abrupt("return", context.arg);
 	        }
 
 	        state = GenStateExecuting;
@@ -7707,30 +7651,106 @@
 	            ? GenStateCompleted
 	            : GenStateSuspendedYield;
 
-	          var info = {
+	          if (record.arg === ContinueSentinel) {
+	            continue;
+	          }
+
+	          return {
 	            value: record.arg,
 	            done: context.done
 	          };
 
-	          if (record.arg === ContinueSentinel) {
-	            if (context.delegate && method === "next") {
-	              // Deliberately forget the last sent value so that we don't
-	              // accidentally pass it on to the delegate.
-	              arg = undefined;
-	            }
-	          } else {
-	            return info;
-	          }
-
 	        } else if (record.type === "throw") {
 	          state = GenStateCompleted;
 	          // Dispatch the exception by looping back around to the
-	          // context.dispatchException(arg) call above.
-	          method = "throw";
-	          arg = record.arg;
+	          // context.dispatchException(context.arg) call above.
+	          context.method = "throw";
+	          context.arg = record.arg;
 	        }
 	      }
 	    };
+	  }
+
+	  // Call delegate.iterator[context.method](context.arg) and handle the
+	  // result, either by returning a { value, done } result from the
+	  // delegate iterator, or by modifying context.method and context.arg,
+	  // setting context.delegate to null, and returning the ContinueSentinel.
+	  function maybeInvokeDelegate(delegate, context) {
+	    var method = delegate.iterator[context.method];
+	    if (method === undefined) {
+	      // A .throw or .return when the delegate iterator has no .throw
+	      // method always terminates the yield* loop.
+	      context.delegate = null;
+
+	      if (context.method === "throw") {
+	        if (delegate.iterator.return) {
+	          // If the delegate iterator has a return method, give it a
+	          // chance to clean up.
+	          context.method = "return";
+	          context.arg = undefined;
+	          maybeInvokeDelegate(delegate, context);
+
+	          if (context.method === "throw") {
+	            // If maybeInvokeDelegate(context) changed context.method from
+	            // "return" to "throw", let that override the TypeError below.
+	            return ContinueSentinel;
+	          }
+	        }
+
+	        context.method = "throw";
+	        context.arg = new TypeError(
+	          "The iterator does not provide a 'throw' method");
+	      }
+
+	      return ContinueSentinel;
+	    }
+
+	    var record = tryCatch(method, delegate.iterator, context.arg);
+
+	    if (record.type === "throw") {
+	      context.method = "throw";
+	      context.arg = record.arg;
+	      context.delegate = null;
+	      return ContinueSentinel;
+	    }
+
+	    var info = record.arg;
+
+	    if (! info) {
+	      context.method = "throw";
+	      context.arg = new TypeError("iterator result is not an object");
+	      context.delegate = null;
+	      return ContinueSentinel;
+	    }
+
+	    if (info.done) {
+	      // Assign the result of the finished delegate to the temporary
+	      // variable specified by delegate.resultName (see delegateYield).
+	      context[delegate.resultName] = info.value;
+
+	      // Resume execution at the desired location (see delegateYield).
+	      context.next = delegate.nextLoc;
+
+	      // If context.method was "throw" but the delegate handled the
+	      // exception, let the outer generator proceed normally. If
+	      // context.method was "next", forget context.arg since it has been
+	      // "consumed" by the delegate iterator. If context.method was
+	      // "return", allow the original .return call to continue in the
+	      // outer generator.
+	      if (context.method !== "return") {
+	        context.method = "next";
+	        context.arg = undefined;
+	      }
+
+	    } else {
+	      // Re-yield the result returned by the delegate method.
+	      return info;
+	    }
+
+	    // The delegate iterator is finished, so forget it and continue with
+	    // the outer generator.
+	    context.delegate = null;
+	    return ContinueSentinel;
 	  }
 
 	  // Define Generator.prototype.{next,throw,return} in terms of the
@@ -7853,6 +7873,9 @@
 	      this.done = false;
 	      this.delegate = null;
 
+	      this.method = "next";
+	      this.arg = undefined;
+
 	      this.tryEntries.forEach(resetTryEntry);
 
 	      if (!skipTempReset) {
@@ -7889,7 +7912,15 @@
 	        record.type = "throw";
 	        record.arg = exception;
 	        context.next = loc;
-	        return !!caught;
+
+	        if (caught) {
+	          // If the dispatched exception was caught by a catch block,
+	          // then let that catch block handle the exception normally.
+	          context.method = "next";
+	          context.arg = undefined;
+	        }
+
+	        return !! caught;
 	      }
 
 	      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
@@ -7957,12 +7988,12 @@
 	      record.arg = arg;
 
 	      if (finallyEntry) {
+	        this.method = "next";
 	        this.next = finallyEntry.finallyLoc;
-	      } else {
-	        this.complete(record);
+	        return ContinueSentinel;
 	      }
 
-	      return ContinueSentinel;
+	      return this.complete(record);
 	    },
 
 	    complete: function(record, afterLoc) {
@@ -7974,11 +8005,14 @@
 	          record.type === "continue") {
 	        this.next = record.arg;
 	      } else if (record.type === "return") {
-	        this.rval = record.arg;
+	        this.rval = this.arg = record.arg;
+	        this.method = "return";
 	        this.next = "end";
 	      } else if (record.type === "normal" && afterLoc) {
 	        this.next = afterLoc;
 	      }
+
+	      return ContinueSentinel;
 	    },
 
 	    finish: function(finallyLoc) {
@@ -8016,6 +8050,12 @@
 	        resultName: resultName,
 	        nextLoc: nextLoc
 	      };
+
+	      if (this.method === "next") {
+	        // Deliberately forget the last sent value so that we don't
+	        // accidentally pass it on to the delegate.
+	        this.arg = undefined;
+	      }
 
 	      return ContinueSentinel;
 	    }
@@ -8307,8 +8347,8 @@
 	      var pluginName = name ? hyphenate(name) : functionName(plugin.constructor).toLowerCase();
 	      plugin.uuid = this.GetYoDigits(6, pluginName);
 
-	      if (!plugin.$element.attr(`data-${ pluginName }`)) {
-	        plugin.$element.attr(`data-${ pluginName }`, plugin.uuid);
+	      if (!plugin.$element.attr(`data-${pluginName}`)) {
+	        plugin.$element.attr(`data-${pluginName}`, plugin.uuid);
 	      }
 	      if (!plugin.$element.data('zfPlugin')) {
 	        plugin.$element.data('zfPlugin', plugin);
@@ -8317,7 +8357,7 @@
 	       * Fires when the plugin has initialized.
 	       * @event Plugin#init
 	       */
-	      plugin.$element.trigger(`init.zf.${ pluginName }`);
+	      plugin.$element.trigger(`init.zf.${pluginName}`);
 
 	      this._uuids.push(plugin.uuid);
 
@@ -8335,12 +8375,12 @@
 	      var pluginName = hyphenate(functionName(plugin.$element.data('zfPlugin').constructor));
 
 	      this._uuids.splice(this._uuids.indexOf(plugin.uuid), 1);
-	      plugin.$element.removeAttr(`data-${ pluginName }`).removeData('zfPlugin')
+	      plugin.$element.removeAttr(`data-${pluginName}`).removeData('zfPlugin')
 	      /**
 	       * Fires when the plugin has been destroyed.
 	       * @event Plugin#destroyed
 	       */
-	      .trigger(`destroyed.zf.${ pluginName }`);
+	      .trigger(`destroyed.zf.${pluginName}`);
 	      for (var prop in plugin) {
 	        plugin[prop] = null; //clean up script to prep for garbage collection.
 	      }
@@ -8397,7 +8437,7 @@
 	     */
 	    GetYoDigits: function (length, namespace) {
 	      length = length || 6;
-	      return Math.round(Math.pow(36, length + 1) - Math.random() * Math.pow(36, length)).toString(36).slice(1) + (namespace ? `-${ namespace }` : '');
+	      return Math.round(Math.pow(36, length + 1) - Math.random() * Math.pow(36, length)).toString(36).slice(1) + (namespace ? `-${namespace}` : '');
 	    },
 	    /**
 	     * Initialize plugins on any elements within `elem` (and `elem` itself) that aren't already initialized.
@@ -8549,7 +8589,7 @@
 	      }
 	    } else {
 	      //error for invalid argument type
-	      throw new TypeError(`We're sorry, ${ type } is not a valid parameter. You must use a string representing the method you wish to invoke.`);
+	      throw new TypeError(`We're sorry, ${type} is not a valid parameter. You must use a string representing the method you wish to invoke.`);
 	    }
 	    return this;
 	  };
@@ -8676,7 +8716,7 @@
 	        if (namedQueries.hasOwnProperty(key)) {
 	          self.queries.push({
 	            name: key,
-	            value: `only screen and (min-width: ${ namedQueries[key] })`
+	            value: `only screen and (min-width: ${namedQueries[key]})`
 	          });
 	        }
 	      }
@@ -8791,7 +8831,7 @@
 
 	      styleMedia = {
 	        matchMedium(media) {
-	          var text = `@media ${ media }{ #matchmediajs-test { width: 1px; } }`;
+	          var text = `@media ${media}{ #matchmediajs-test { width: 1px; } }`;
 
 	          // 'style.styleSheet' is used by IE <= 8 and 'style.textContent' for all other browsers
 	          if (style.styleSheet) {
@@ -8894,7 +8934,7 @@
 	          cb();
 	        }
 	      }, remain);
-	      elem.trigger(`timerstart.zf.${ nameSpace }`);
+	      elem.trigger(`timerstart.zf.${nameSpace}`);
 	    };
 
 	    this.pause = function () {
@@ -8904,7 +8944,7 @@
 	      elem.data('paused', true);
 	      var end = Date.now();
 	      remain = remain - (end - start);
-	      elem.trigger(`timerpaused.zf.${ nameSpace }`);
+	      elem.trigger(`timerpaused.zf.${nameSpace}`);
 	    };
 	  }
 
@@ -8985,9 +9025,9 @@
 	     */
 	    parseKey(event) {
 	      var key = keyCodes[event.which || event.keyCode] || String.fromCharCode(event.which).toUpperCase();
-	      if (event.shiftKey) key = `SHIFT_${ key }`;
-	      if (event.ctrlKey) key = `CTRL_${ key }`;
-	      if (event.altKey) key = `ALT_${ key }`;
+	      if (event.shiftKey) key = `SHIFT_${key}`;
+	      if (event.ctrlKey) key = `CTRL_${key}`;
+	      if (event.altKey) key = `ALT_${key}`;
 	      return key;
 	    },
 
@@ -9283,9 +9323,9 @@
 	      menu.attr('role', 'menubar');
 
 	      var items = menu.find('li').attr({ 'role': 'menuitem' }),
-	          subMenuClass = `is-${ type }-submenu`,
-	          subItemClass = `${ subMenuClass }-item`,
-	          hasSubClass = `is-${ type }-submenu-parent`;
+	          subMenuClass = `is-${type}-submenu`,
+	          subItemClass = `${subMenuClass}-item`,
+	          hasSubClass = `is-${type}-submenu-parent`;
 
 	      menu.find('a:first').attr('tabindex', 0);
 
@@ -9300,7 +9340,7 @@
 	            'aria-label': $item.children('a:first').text()
 	          });
 
-	          $sub.addClass(`submenu ${ subMenuClass }`).attr({
+	          $sub.addClass(`submenu ${subMenuClass}`).attr({
 	            'data-submenu': '',
 	            'aria-hidden': true,
 	            'role': 'menu'
@@ -9308,7 +9348,7 @@
 	        }
 
 	        if ($item.parent('[data-submenu]').length) {
-	          $item.addClass(`is-submenu-item ${ subItemClass }`);
+	          $item.addClass(`is-submenu-item ${subItemClass}`);
 	        }
 	      });
 
@@ -9317,11 +9357,11 @@
 
 	    Burn(menu, type) {
 	      var items = menu.find('li').removeAttr('tabindex'),
-	          subMenuClass = `is-${ type }-submenu`,
-	          subItemClass = `${ subMenuClass }-item`,
-	          hasSubClass = `is-${ type }-submenu-parent`;
+	          subMenuClass = `is-${type}-submenu`,
+	          subItemClass = `${subMenuClass}-item`,
+	          hasSubClass = `is-${type}-submenu-parent`;
 
-	      menu.find('>li, .menu, .menu > li').removeClass(`${ subMenuClass } ${ subItemClass } ${ hasSubClass } is-submenu-item submenu is-active`).removeAttr('data-submenu').css('display', '');
+	      menu.find('>li, .menu, .menu > li').removeClass(`${subMenuClass} ${subItemClass} ${hasSubClass} is-submenu-item submenu is-active`).removeAttr('data-submenu').css('display', '');
 
 	      // console.log(      menu.find('.' + subMenuClass + ', .' + subItemClass + ', .has-submenu, .is-submenu-item, .submenu, [data-submenu]')
 	      //           .removeClass(subMenuClass + ' ' + subItemClass + ' has-submenu is-submenu-item submenu')
@@ -9437,7 +9477,7 @@
 	    // Resets transitions and removes motion-specific classes
 	    function reset() {
 	      element[0].style.transitionDuration = 0;
-	      element.removeClass(`${ initClass } ${ activeClass } ${ animation }`);
+	      element.removeClass(`${initClass} ${activeClass} ${animation}`);
 	    }
 	  }
 
@@ -9456,8 +9496,8 @@
 	  const MutationObserver = function () {
 	    var prefixes = ['WebKit', 'Moz', 'O', 'Ms', ''];
 	    for (var i = 0; i < prefixes.length; i++) {
-	      if (`${ prefixes[i] }MutationObserver` in window) {
-	        return window[`${ prefixes[i] }MutationObserver`];
+	      if (`${prefixes[i]}MutationObserver` in window) {
+	        return window[`${prefixes[i]}MutationObserver`];
 	      }
 	    }
 	    return false;
@@ -9465,7 +9505,7 @@
 
 	  const triggers = (el, type) => {
 	    el.data(type).split(' ').forEach(id => {
-	      $(`#${ id }`)[type === 'close' ? 'trigger' : 'triggerHandler'](`${ type }.zf.trigger`, [el]);
+	      $(`#${id}`)[type === 'close' ? 'trigger' : 'triggerHandler'](`${type}.zf.trigger`, [el]);
 	    });
 	  };
 	  // Elements with [data-open] will reveal a plugin that supports it when clicked.
@@ -9505,7 +9545,7 @@
 
 	  $(document).on('focus.zf.trigger blur.zf.trigger', '[data-toggle-focus]', function () {
 	    let id = $(this).data('toggle-focus');
-	    $(`#${ id }`).triggerHandler('toggle.zf.trigger', [$(this)]);
+	    $(`#${id}`).triggerHandler('toggle.zf.trigger', [$(this)]);
 	  });
 
 	  /**
@@ -9540,12 +9580,12 @@
 	    }
 	    if (yetiBoxes.length) {
 	      let listeners = plugNames.map(name => {
-	        return `closeme.zf.${ name }`;
+	        return `closeme.zf.${name}`;
 	      }).join(' ');
 
 	      $(window).off(listeners).on(listeners, function (e, pluginId) {
 	        let plugin = e.namespace.split('.')[0];
-	        let plugins = $(`[data-${ plugin }]`).not(`[data-yeti-box="${ pluginId }"]`);
+	        let plugins = $(`[data-${plugin}]`).not(`[data-yeti-box="${pluginId}"]`);
 
 	        plugins.each(function () {
 	          let _this = $(this);
@@ -9740,7 +9780,7 @@
 	    _init() {
 	      var $id = this.$element.attr('id');
 
-	      this.$anchor = $(`[data-toggle="${ $id }"]`).length ? $(`[data-toggle="${ $id }"]`) : $(`[data-open="${ $id }"]`);
+	      this.$anchor = $(`[data-toggle="${$id}"]`).length ? $(`[data-toggle="${$id}"]`) : $(`[data-open="${$id}"]`);
 	      this.$anchor.attr({
 	        'aria-controls': $id,
 	        'data-is-focus': false,
@@ -10157,7 +10197,7 @@
 	        var $el = $(el),
 	            $content = $el.children('[data-tab-content]'),
 	            id = $content[0].id || Foundation.GetYoDigits(6, 'accordion'),
-	            linkId = el.id || `${ id }-label`;
+	            linkId = el.id || `${id}-label`;
 
 	        $el.find('a:first').attr({
 	          'aria-controls': id,
@@ -10255,7 +10295,7 @@
 	        this.$element.trigger('down.zf.accordion', [$target]);
 	      });
 
-	      $(`#${ $target.attr('aria-labelledby') }`).attr({
+	      $(`#${$target.attr('aria-labelledby')}`).attr({
 	        'aria-expanded': true,
 	        'aria-selected': true
 	      });
@@ -10287,7 +10327,7 @@
 
 	      $target.attr('aria-hidden', true).parent().removeClass('is-active');
 
-	      $(`#${ $target.attr('aria-labelledby') }`).attr({
+	      $(`#${$target.attr('aria-labelledby')}`).attr({
 	        'aria-expanded': false,
 	        'aria-selected': false
 	      });
@@ -10381,7 +10421,7 @@
 	      this.cached = { mq: Foundation.MediaQuery.current };
 	      this.isMobile = mobileSniff();
 
-	      this.$anchor = $(`[data-open="${ this.id }"]`).length ? $(`[data-open="${ this.id }"]`) : $(`[data-toggle="${ this.id }"]`);
+	      this.$anchor = $(`[data-open="${this.id}"]`).length ? $(`[data-open="${this.id}"]`) : $(`[data-toggle="${this.id}"]`);
 	      this.$anchor.attr({
 	        'aria-controls': this.id,
 	        'aria-haspopup': true,
@@ -10410,7 +10450,7 @@
 	        this.$element.addClass('without-overlay');
 	      }
 	      this._events();
-	      if (this.options.deepLink && window.location.hash === `#${ this.id }`) {
+	      if (this.options.deepLink && window.location.hash === `#${this.id}`) {
 	        $(window).one('load.zf.reveal', this.open.bind(this));
 	      }
 	    }
@@ -10498,7 +10538,7 @@
 	        });
 	      }
 	      if (this.options.deepLink) {
-	        $(window).on(`popstate.zf.reveal:${ this.id }`, this._handleState.bind(this));
+	        $(window).on(`popstate.zf.reveal:${this.id}`, this._handleState.bind(this));
 	      }
 	    }
 
@@ -10522,7 +10562,7 @@
 	     */
 	    open() {
 	      if (this.options.deepLink) {
-	        var hash = `#${ this.id }`;
+	        var hash = `#${this.id}`;
 
 	        if (window.history.pushState) {
 	          window.history.pushState(null, null, hash);
@@ -10798,7 +10838,7 @@
 	      }
 	      this.$element.hide().off();
 	      this.$anchor.off('.zf');
-	      $(window).off(`.zf.reveal:${ this.id }`);
+	      $(window).off(`.zf.reveal:${this.id}`);
 
 	      Foundation.unregisterPlugin(this);
 	    }
@@ -11040,7 +11080,7 @@
 	     */
 	    findLabel($el) {
 	      var id = $el[0].id;
-	      var $label = this.$element.find(`label[for="${ id }"]`);
+	      var $label = this.$element.find(`label[for="${id}"]`);
 
 	      if (!$label.length) {
 	        return $el.closest('label');
@@ -11060,7 +11100,7 @@
 	    findRadioLabels($els) {
 	      var labels = $els.map((i, el) => {
 	        var id = el.id;
-	        var $label = this.$element.find(`label[for="${ id }"]`);
+	        var $label = this.$element.find(`label[for="${id}"]`);
 
 	        if (!$label.length) {
 	          $label = $(el).closest('label');
@@ -11097,7 +11137,7 @@
 	     */
 
 	    removeRadioErrorClasses(groupName) {
-	      var $els = this.$element.find(`:radio[name="${ groupName }"]`);
+	      var $els = this.$element.find(`:radio[name="${groupName}"]`);
 	      var $labels = this.findRadioLabels($els);
 	      var $formErrors = this.findFormError($els);
 
@@ -11267,7 +11307,7 @@
 	    validateRadio(groupName) {
 	      // If at least one radio in the group has the `required` attribute, the group is considered required
 	      // Per W3C spec, all radio buttons in a group should have `required`, but we're being nice
-	      var $group = this.$element.find(`:radio[name="${ groupName }"]`);
+	      var $group = this.$element.find(`:radio[name="${groupName}"]`);
 	      var valid = false,
 	          required = false;
 
@@ -11315,9 +11355,9 @@
 	      var $form = this.$element,
 	          opts = this.options;
 
-	      $(`.${ opts.labelErrorClass }`, $form).not('small').removeClass(opts.labelErrorClass);
-	      $(`.${ opts.inputErrorClass }`, $form).not('small').removeClass(opts.inputErrorClass);
-	      $(`${ opts.formErrorSelector }.${ opts.formErrorClass }`).removeClass(opts.formErrorClass);
+	      $(`.${opts.labelErrorClass}`, $form).not('small').removeClass(opts.labelErrorClass);
+	      $(`.${opts.inputErrorClass}`, $form).not('small').removeClass(opts.inputErrorClass);
+	      $(`${opts.formErrorSelector}.${opts.formErrorClass}`).removeClass(opts.formErrorClass);
 	      $form.find('[data-abide-error]').css('display', 'none');
 	      $(':input', $form).not(':button, :submit, :reset, :hidden, :radio, :checkbox, [data-abide-ignore]').val('').removeAttr('data-invalid');
 	      $(':input:radio', $form).not('[data-abide-ignore]').prop('checked', false).removeAttr('data-invalid');
@@ -11434,7 +11474,7 @@
 	     */
 	    validators: {
 	      equalTo: function (el, required, parent) {
-	        return $(`#${ el.attr('data-equalto') }`).val() === el.val();
+	        return $(`#${el.attr('data-equalto')}`).val() === el.val();
 	      }
 	    }
 	  };
@@ -11525,7 +11565,7 @@
 	     * @private
 	     */
 	    _buildTemplate(id) {
-	      var templateClasses = `${ this.options.tooltipClass } ${ this.options.positionClass } ${ this.options.templateClasses }`.trim();
+	      var templateClasses = `${this.options.tooltipClass} ${this.options.positionClass} ${this.options.templateClasses}`.trim();
 	      var $template = $('<div></div>').addClass(templateClasses).attr({
 	        'role': 'tooltip',
 	        'aria-hidden': true,
@@ -11958,7 +11998,7 @@
 
 	      // used for onClick and in the keyboard handlers
 	      var handleClickFn = function (e) {
-	        var $elem = $(e.target).parentsUntil('ul', `.${ parClass }`),
+	        var $elem = $(e.target).parentsUntil('ul', `.${parClass}`),
 	            hasSub = $elem.hasClass(parClass),
 	            hasClicked = $elem.attr('data-is-click') === 'true',
 	            $sub = $elem.children('.is-dropdown-submenu');
@@ -11976,7 +12016,7 @@
 	            e.preventDefault();
 	            e.stopImmediatePropagation();
 	            _this._show($sub);
-	            $elem.add($elem.parentsUntil(_this.$element, `.${ parClass }`)).attr('data-is-click', true);
+	            $elem.add($elem.parentsUntil(_this.$element, `.${parClass}`)).attr('data-is-click', true);
 	          }
 	        } else {
 	          if (_this.options.closeOnClickInside) {
@@ -12172,10 +12212,10 @@
 	      if (!clear) {
 	        var oldClass = this.options.alignment === 'left' ? '-right' : '-left',
 	            $parentLi = $sub.parent('.is-dropdown-submenu-parent');
-	        $parentLi.removeClass(`opens${ oldClass }`).addClass(`opens-${ this.options.alignment }`);
+	        $parentLi.removeClass(`opens${oldClass}`).addClass(`opens-${this.options.alignment}`);
 	        clear = Foundation.Box.ImNotTouchingYou($sub, null, true);
 	        if (!clear) {
-	          $parentLi.removeClass(`opens-${ this.options.alignment }`).addClass('opens-inner');
+	          $parentLi.removeClass(`opens-${this.options.alignment}`).addClass('opens-inner');
 	        }
 	        this.changed = true;
 	      }
@@ -12222,7 +12262,7 @@
 
 	        if (this.changed || $toClose.find('opens-inner').length) {
 	          var oldClass = this.options.alignment === 'left' ? 'right' : 'left';
-	          $toClose.find('li.is-dropdown-submenu-parent').add($toClose).removeClass(`opens-inner opens-${ this.options.alignment }`).addClass(`opens-${ oldClass }`);
+	          $toClose.find('li.is-dropdown-submenu-parent').add($toClose).removeClass(`opens-inner opens-${this.options.alignment}`).addClass(`opens-${oldClass}`);
 	          this.changed = false;
 	        }
 	        /**
@@ -12379,7 +12419,7 @@
 
 	      // Add ARIA attributes to triggers
 	      var id = this.$element[0].id;
-	      $(`[data-open="${ id }"], [data-close="${ id }"], [data-toggle="${ id }"]`).attr('aria-controls', id);
+	      $(`[data-open="${id}"], [data-close="${id}"], [data-toggle="${id}"]`).attr('aria-controls', id);
 	      // If the target is hidden, add aria-hidden
 	      this.$element.attr('aria-expanded', this.$element.is(':hidden') ? false : true);
 	    }
@@ -12515,16 +12555,16 @@
 	    _init() {
 	      var _this = this;
 
-	      this.$tabTitles = this.$element.find(`.${ this.options.linkClass }`);
-	      this.$tabContent = $(`[data-tabs-content="${ this.$element[0].id }"]`);
+	      this.$tabTitles = this.$element.find(`.${this.options.linkClass}`);
+	      this.$tabContent = $(`[data-tabs-content="${this.$element[0].id}"]`);
 
 	      this.$tabTitles.each(function () {
 	        var $elem = $(this),
 	            $link = $elem.find('a'),
 	            isActive = $elem.hasClass('is-active'),
 	            hash = $link[0].hash.slice(1),
-	            linkId = $link[0].id ? $link[0].id : `${ hash }-label`,
-	            $tabContent = $(`#${ hash }`);
+	            linkId = $link[0].id ? $link[0].id : `${hash}-label`,
+	            $tabContent = $(`#${hash}`);
 
 	        $elem.attr({ 'role': 'presentation' });
 
@@ -12582,7 +12622,7 @@
 	    _addClickHandler() {
 	      var _this = this;
 
-	      this.$element.off('click.zf.tabs').on('click.zf.tabs', `.${ this.options.linkClass }`, function (e) {
+	      this.$element.off('click.zf.tabs').on('click.zf.tabs', `.${this.options.linkClass}`, function (e) {
 	        e.preventDefault();
 	        e.stopPropagation();
 	        if ($(this).hasClass('is-active')) {
@@ -12654,9 +12694,9 @@
 	      var $tabLink = $target.find('[role="tab"]'),
 	          hash = $tabLink[0].hash,
 	          $targetContent = this.$tabContent.find(hash),
-	          $oldTab = this.$element.find(`.${ this.options.linkClass }.is-active`).removeClass('is-active').find('[role="tab"]').attr({ 'aria-selected': 'false' });
+	          $oldTab = this.$element.find(`.${this.options.linkClass}.is-active`).removeClass('is-active').find('[role="tab"]').attr({ 'aria-selected': 'false' });
 
-	      $(`#${ $oldTab.attr('aria-controls') }`).removeClass('is-active').attr({ 'aria-hidden': 'true' });
+	      $(`#${$oldTab.attr('aria-controls')}`).removeClass('is-active').attr({ 'aria-hidden': 'true' });
 
 	      $target.addClass('is-active');
 
@@ -12686,10 +12726,10 @@
 	      }
 
 	      if (idStr.indexOf('#') < 0) {
-	        idStr = `#${ idStr }`;
+	        idStr = `#${idStr}`;
 	      }
 
-	      var $target = this.$tabTitles.find(`[href="${ idStr }"]`).parent(`.${ this.options.linkClass }`);
+	      var $target = this.$tabTitles.find(`[href="${idStr}"]`).parent(`.${this.options.linkClass}`);
 
 	      this._handleTabChange($target);
 	    }
@@ -12702,7 +12742,7 @@
 	     */
 	    _setHeight() {
 	      var max = 0;
-	      this.$tabContent.find(`.${ this.options.panelClass }`).css('height', '').each(function () {
+	      this.$tabContent.find(`.${this.options.panelClass}`).css('height', '').each(function () {
 	        var panel = $(this),
 	            isActive = panel.hasClass('is-active');
 
@@ -12720,7 +12760,7 @@
 	        }
 
 	        max = temp > max ? temp : max;
-	      }).css('height', `${ max }px`);
+	      }).css('height', `${max}px`);
 	    }
 
 	    /**
@@ -12728,7 +12768,7 @@
 	     * @fires Tabs#destroyed
 	     */
 	    destroy() {
-	      this.$element.find(`.${ this.options.linkClass }`).off('.zf.tabs').hide().end().find(`.${ this.options.panelClass }`).hide();
+	      this.$element.find(`.${this.options.linkClass}`).off('.zf.tabs').hide().end().find(`.${this.options.panelClass}`).hide();
 
 	      if (this.options.matchHeight) {
 	        if (this._setHeightMqHandler != null) {
@@ -13316,41 +13356,14 @@
 
 /***/ },
 /* 320 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	
-	// Require jQuery
-	var $ = __webpack_require__(319);
-
-	// Init function
-	function init() {
-
-		// For each sidebar
-		$('.sidebar-dropdown').each(function (idx, el) {
-
-			// Turn to jQuery object
-			el = $(el);
-
-			// Is it open?
-			var isOpen = false;
-
-			// On click ...
-			el.find('.sidebar-dropdown-toggle').on('click', function (e) {
-
-				// .. slide toggle content, ..
-				el.find('.sidebar-dropdown-content').slideToggle();
-
-				// .. and toggle class.
-				el.toggleClass('open', isOpen = !isOpen);
-			}); // Close on click
-
-			// Keep it close in the beginning
-			el.find('.sidebar-dropdown-content').slideUp(0);
-		}); // Close each
-	} // Close init
-
-	// On ready
-	$(init);
+	$(function () {
+	  $(".expand").on("click", function () {
+	    $(this).next().slideToggle(200);
+	    $expand = $(this).find(">:first-child");
+	  });
+	});
 
 /***/ },
 /* 321 */

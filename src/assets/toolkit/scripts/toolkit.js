@@ -48,7 +48,7 @@ var flexslider = require ('../../vendor/flexslider/jquery.flexslider-min.js');
 // var bar = fooModule.foo();
 
 require('./modules/map');
-require('./modules/dropdown');
+require('./modules/acordion');
 require('./modules/tabs');
 require('./modules/file-input');
 require('./modules/animatedModal');

@@ -6,14 +6,13 @@
 	background: #fff;
 	width: 100%;
 	margin: auto;
-	
-	
+	@include grid-row(); 	
 	
 	line-height: 1.5;
 	font-weight: 300;
 	color: #888;
 	-webkit-font-smoothing: antialiased;
-}
+
 
 .tabs {
 	
@@ -108,3 +107,4 @@
 }
 
 
+}
