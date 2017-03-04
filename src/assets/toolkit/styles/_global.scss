@@ -2,11 +2,14 @@
 body {
 	font-size: rem-calc($base-font-size);
 	line-height: rem-calc($base-line-height);
-	color: $blue-gray;
+	color: #0a184a;
+	z-index: 0;
+	opacity:1;
 }
 
 a {
 	transition: all 0.2s;
+
 }
 
 // Home-Section
@@ -14,39 +17,66 @@ a {
 //
 .main {
 	position: relative;	
-	background-image: none, url('../images/bitmap.jpg');	
+	background-image: none, url('../images/bitmap.jpg');		
 	background-size: cover;
 	padding-bottom: 500px;
-	max-width: 100%;
-	
+	max-width: 100%;		
 	.container {
-	@include grid-row();	
+		@include grid-row();	
 		h2 {
+			
+			
 			font-family: $font-family;
 			font-size: 40px;
 			margin:auto;
 			text-align: center;
 			color:$white !important;
-			z-index: 1;
-			color: $white !important;
 			font-weight: 300;
 		}
-		.home-forms {
+		.home-forms {						
 			display: flex;
-			margin-top: 95px;
-			
-
+			margin-top: 95px;	
+			@include breakpoint(small only) {
+		    	width: 100%;
+		    	float: none;		     
+		    	display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+				padding-left: 20px;
+				padding-right: 20px;
+		    }
+		    @include breakpoint(medium only) {
+		    	width: 100%;
+		    	float: none;		     
+		    	display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+				padding-left: 20px;
+				padding-right: 20px;	    			    		    					
+		    }
+		    @include breakpoint(large only) {
+		    	padding-left: 20px;
+		    	padding-right:20px;    			    		    					
+		    }    	    	    		
 		}
+		
 	}
+	@include breakpoint(small only) {
+      width: 100%;
+      float: none;
+      background-color:red;
+    }    
 }	
 
+ 	   
 // FlexSlider
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 //
 
 .flexslider {
-	margin-left: -25px;
-	
+	margin-left: -25px;	
 	.slides {
 		li {
 			position: relative;
@@ -68,6 +98,17 @@ a {
 			margin-right: 20px;
 			font-size: 20px;
 		}
+		@include breakpoint(small only) {
+			padding: 10px;
+			bottom:-15px;
+			right: 20px;
+			i {
+				margin-right: 10px;
+			}			    		    	
+		}    	
+	}
+	img {
+		width: 100%;
 	}
 }
 

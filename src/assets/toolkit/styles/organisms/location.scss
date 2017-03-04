@@ -20,6 +20,14 @@
 				font-size: 15px;
 				font-weight: 300;
 			}
+			@include breakpoint(small only) {
+				@include grid-column(12);
+				margin-bottom: 50px;		    		    	
+		    }    	
+		    @include breakpoint(medium only) {
+				@include grid-column(12);
+				margin-bottom: 50px;		    		    	
+		    }    
 		}
 	}
 	.map-info {
@@ -37,6 +45,7 @@
 			font-size: 15px;
 			
 		}
+
 	}
 	.map {
 		@include grid-column(7);
@@ -49,6 +58,7 @@
 			@include scut-coords(0 0 0 0);
 			position: absolute !important;
 		}
+	   
 	}
 }
 

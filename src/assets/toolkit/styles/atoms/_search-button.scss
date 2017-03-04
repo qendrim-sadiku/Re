@@ -1,0 +1,19 @@
+.open-search {				
+	z-index: 1;		
+	background: $primary-color;				
+	margin: 0;				
+	width: 162px;
+	height: 47px;
+	text-indent: -9999px;
+	background-image: url('../images/search.svg');
+	background-repeat: no-repeat;
+	background-position: 70px;
+	@include breakpoint(small only) {      
+	   
+	    margin-bottom: 20px;
+	    text-align: center;
+	    margin:auto;
+	  }   
+	
+}
+

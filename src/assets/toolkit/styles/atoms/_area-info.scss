@@ -1,6 +1,5 @@
 #integration-list { 
   @include grid-row();
-
   ul {
     padding: 0;
     margin: 20px 0;
@@ -14,8 +13,7 @@
       padding-bottom: 0px;
       overflow: hidden;
       margin-bottom: 50px;
-    }
-   
+    }   
     .place-img {
        img {
         float: left;
@@ -46,6 +44,7 @@
         font-size: 20px;
         color: #0b184a;
         font-weight:300;
+        text-align: left;
       }
       p {
         float: left;

@@ -11,13 +11,16 @@
 			.logo-section {
 				display: flex;
 				float: left;
-				h2 {
-					color: $white;
-					margin-top: 0px;
-					margin-left: 10px;
-					font-size: 29px;
-					font-weight: 400;
-					font-family: $font-family;
+				a {
+					display: flex;	
+					h2 {
+						color: $white;
+						margin-top: 0px;
+						margin-left: 10px;
+						font-size: 29px;
+						font-weight: 400;
+						font-family: $font-family;
+					}
 				}
 			}
 				

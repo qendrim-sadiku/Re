@@ -166,9 +166,6 @@
 		
 									<ul class="f-menu_accordion">
 											<li>
-												<a href="molecules.html#components.animated-modal">Animated Modal</a>
-											</li>
-											<li>
 												<a href="molecules.html#components.button-group">Button Group</a>
 											</li>
 											<li>
@@ -182,6 +179,9 @@
 											</li>
 											<li>
 												<a href="molecules.html#components.result">Result</a>
+											</li>
+											<li>
+												<a href="molecules.html#components.search-button">Search Button</a>
 											</li>
 											<li>
 												<a href="molecules.html#components.tab">Tab</a>
@@ -448,7 +448,7 @@
 			</span>
 		</div>
 	</div><div class="f-item-preview">
-	<div id="integration-list">
+	<div id="integration-list" class="bounce">
 	<ul>
 		<li>
 			<a href="../pages/show-page.html" class="place-img">
@@ -618,7 +618,7 @@
 </div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;div id&#x3D;&quot;integration-list&quot;&gt;
+	<pre><code class="language-markup">&lt;div id&#x3D;&quot;integration-list&quot; class&#x3D;&quot;bounce&quot;&gt;
 	&lt;ul&gt;
 		&lt;li&gt;
 			&lt;a href&#x3D;&quot;../pages/show-page.html&quot; class&#x3D;&quot;place-img&quot;&gt;
@@ -896,8 +896,10 @@
 	<header class="header">
 		<div class="header-padding">
 			<div class="logo-section">
-				<img src="undefined/assets/toolkit/images/soccer.svg" class="logo">
-				<h2>Terminet</h2>
+				<a href="home.html">
+					<img src="undefined/assets/toolkit/images/soccer.svg" class="logo">
+					<h2>Terminet</h2>
+				</a>
 			</div>
 			<a data-open="exampleModal1" class="base-button">Sign In</a>
 
@@ -937,8 +939,10 @@
 	&lt;header class&#x3D;&quot;header&quot;&gt;
 		&lt;div class&#x3D;&quot;header-padding&quot;&gt;
 			&lt;div class&#x3D;&quot;logo-section&quot;&gt;
-				&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/soccer.svg&quot; class&#x3D;&quot;logo&quot;&gt;
-				&lt;h2&gt;Terminet&lt;/h2&gt;
+				&lt;a href&#x3D;&quot;home.html&quot;&gt;
+					&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/soccer.svg&quot; class&#x3D;&quot;logo&quot;&gt;
+					&lt;h2&gt;Terminet&lt;/h2&gt;
+				&lt;/a&gt;
 			&lt;/div&gt;
 			&lt;a data-open&#x3D;&quot;exampleModal1&quot; class&#x3D;&quot;base-button&quot;&gt;Sign In&lt;/a&gt;
 
@@ -990,63 +994,64 @@
 			</span>
 		</div>
 	</div><div class="f-item-preview">
-	<div class="container">
 	<div class="header-with-result">
-		<header class="header-result">
-			<div class="header-padding">
-				<div class="logo-section">
+	<header class="header-result">
+		<div class="header-padding">
+			<div class="logo-section">
+				<a href="home.html">
 					<img src="undefined/assets/toolkit/images/soccer.svg" class="logo">
 					<h2>Terminet</h2>
-				</div>
-				<a data-open="exampleModal1" class="base-button">Sign In</a>
-
-				<div class="reveal" id="exampleModal1" data-reveal>
-					<div class="row">
-						<div class="medium-12 medium-centered large-8 large-centered columns">
-							<form>
-								<div class="row column log-in-form ">
-									<h4>Sign in to your account</h4>
-									<p>Hello, This login is just for sport <br/> centers.</p>
-
-									<input type="text" placeholder="Email">
-									</label>
-
-									<input type="password" placeholder="Password">
-									</label>
-
-									<input type="checkbox" class="text-center" id="test2" checked="checked" />
-									<label for="test2">Remember me</label>
-
-									<input type="submit" value="Submit">
-									<p class="text-center"><a href="#">Forgot your password?</a></p>
-								</div>
-							</form>
-
-						</div>
-					</div> <button class="close-button" data-close aria-label="Close modal" type="button">
-				    <span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
+				</a>
 			</div>
-		</header>
-		<div class="home-forms">
-			<div class="select-width">
-				<div class="select">
-					<div class="input">
+			<a data-open="exampleModal1" class="base-button">Sign In</a>
+
+			<div class="reveal" id="exampleModal1" data-reveal>
+				<div class="row">
+					<div class="medium-12 medium-centered large-8 large-centered columns">
+						<form>
+							<div class="row column log-in-form ">
+								<h4>Sign in to your account</h4>
+								<p>Hello, This login is just for sport <br/> centers.</p>
+
+								<input type="text" placeholder="Email">
+								</label>
+
+								<input type="password" placeholder="Password">
+								</label>
+
+								<input type="checkbox" class="text-center" id="test2" checked="checked" />
+								<label for="test2">Remember me</label>
+
+								<input type="submit" value="Submit">
+								<p class="text-center"><a href="#">Forgot your password?</a></p>
+							</div>
+						</form>
+
 					</div>
-					<div class="select-options">
-						<ul>
-							<li>
-								<span>Lokacioni</span>
-							</li>
-							<li>
-								<span>Option 2</span>
-							</li>
-							<li>
-								<span>Option 3</span>
-							</li>
-							<li>
-								<span>Option 4</li>
+				</div> <button class="close-button" data-close aria-label="Close modal" type="button">
+			    <span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+		</div>
+	</header>
+	<div class="home-forms">
+		<div class="select-width">
+			<div class="select">
+				<div class="input">
+				</div>
+				<div class="select-options">
+					<ul>
+						<li>
+							<span style="display:none">Lokacioni</span>
+						</li>
+						<li>
+							<span>Option 2</span>
+						</li>
+						<li>
+							<span>Option 3</span>
+						</li>
+						<li>
+							<span>Option 4</li>
 		      </ul>
 		    </div>
 		  </div>
@@ -1057,16 +1062,16 @@
 		    <div class="days-select-options">
 		      <ul>
 		        <li >
-		          <span>Dita ?</span>
-							</li>
-							<li>
-								<span>E Hënë</span>
-							</li>
-							<li>
-								<span>E Martë</span>
-							</li>
-							<li>
-								<span>E Mërkure</li>
+		          <span style="display:none">Dita ?</span>
+						</li>
+						<li>
+							<span>E Hënë</span>
+						</li>
+						<li>
+							<span>E Martë</span>
+						</li>
+						<li>
+							<span>E Mërkure</li>
 		        <li >
 		          <span>E Enjte </li>
 		      </ul>
@@ -1079,98 +1084,103 @@
 		    <div class="hours-select-options">
 		      <ul>
 		        <li >
-		          <span>Ora ?</span>
-							</li>
-							<li>
-								<span>E Hënë</span>
-							</li>
-							<li>
-								<span>E Martë</span>
-							</li>
-							<li>
-								<span>E Mërkure</li>
+		          <span style="display:none">Ora ?</span>
+						</li>
+						<li>
+							<span>E Hënë</span>
+						</li>
+						<li>
+							<span>E Martë</span>
+						</li>
+						<li>
+							<span>E Mërkure</li>
 		        <li >
 		          <span>E Enjte </li>
 		      </ul>
 		    </div>
 		  </div>
-		</div>  		 <!--Call your modal-->
-		 <div class="form-modal">    
-		    <form action=""> 
-		      <input type="submit" id="demo02" href="#modal-02" class="open-modal"/>
-		    </form>
-		 </div> 
-		
-		
-		
-		<div id="modal-02" class="modal-bg">
-		    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
-		  
-		    <div class="modal-content">
-		     
-		    </div>
-		</div>		</div>
+		</div>  			 <!--Call your modal-->
+	 <div class="form-modal">    
+	    <form action=""> 
+	      <input type="submit" id="demo02" href="#modal-02" class="open-modal"/>
+	    </form>
+	 </div> 
+
+
+
+	<div id="modal-02" class="modal-bg">
+	    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
+	  
+	    <div class="modal-content">
+	   
+	     
+
+	      
+	    </div>
+	</div>
+
 	</div>
 </div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;div class&#x3D;&quot;container&quot;&gt;
-	&lt;div class&#x3D;&quot;header-with-result&quot;&gt;
-		&lt;header class&#x3D;&quot;header-result&quot;&gt;
-			&lt;div class&#x3D;&quot;header-padding&quot;&gt;
-				&lt;div class&#x3D;&quot;logo-section&quot;&gt;
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;header-with-result&quot;&gt;
+	&lt;header class&#x3D;&quot;header-result&quot;&gt;
+		&lt;div class&#x3D;&quot;header-padding&quot;&gt;
+			&lt;div class&#x3D;&quot;logo-section&quot;&gt;
+				&lt;a href&#x3D;&quot;home.html&quot;&gt;
 					&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/soccer.svg&quot; class&#x3D;&quot;logo&quot;&gt;
 					&lt;h2&gt;Terminet&lt;/h2&gt;
-				&lt;/div&gt;
-				&lt;a data-open&#x3D;&quot;exampleModal1&quot; class&#x3D;&quot;base-button&quot;&gt;Sign In&lt;/a&gt;
-
-				&lt;div class&#x3D;&quot;reveal&quot; id&#x3D;&quot;exampleModal1&quot; data-reveal&gt;
-					&lt;div class&#x3D;&quot;row&quot;&gt;
-						&lt;div class&#x3D;&quot;medium-12 medium-centered large-8 large-centered columns&quot;&gt;
-							&lt;form&gt;
-								&lt;div class&#x3D;&quot;row column log-in-form &quot;&gt;
-									&lt;h4&gt;Sign in to your account&lt;/h4&gt;
-									&lt;p&gt;Hello, This login is just for sport &lt;br/&gt; centers.&lt;/p&gt;
-
-									&lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Email&quot;&gt;
-									&lt;/label&gt;
-
-									&lt;input type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot;&gt;
-									&lt;/label&gt;
-
-									&lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;text-center&quot; id&#x3D;&quot;test2&quot; checked&#x3D;&quot;checked&quot; /&gt;
-									&lt;label for&#x3D;&quot;test2&quot;&gt;Remember me&lt;/label&gt;
-
-									&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot;&gt;
-									&lt;p class&#x3D;&quot;text-center&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Forgot your password?&lt;/a&gt;&lt;/p&gt;
-								&lt;/div&gt;
-							&lt;/form&gt;
-
-						&lt;/div&gt;
-					&lt;/div&gt; &lt;button class&#x3D;&quot;close-button&quot; data-close aria-label&#x3D;&quot;Close modal&quot; type&#x3D;&quot;button&quot;&gt;
-				    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
-				  &lt;/button&gt;
-				&lt;/div&gt;
+				&lt;/a&gt;
 			&lt;/div&gt;
-		&lt;/header&gt;
-		&lt;div class&#x3D;&quot;home-forms&quot;&gt;
-			&lt;div class&#x3D;&quot;select-width&quot;&gt;
-				&lt;div class&#x3D;&quot;select&quot;&gt;
-					&lt;div class&#x3D;&quot;input&quot;&gt;
+			&lt;a data-open&#x3D;&quot;exampleModal1&quot; class&#x3D;&quot;base-button&quot;&gt;Sign In&lt;/a&gt;
+
+			&lt;div class&#x3D;&quot;reveal&quot; id&#x3D;&quot;exampleModal1&quot; data-reveal&gt;
+				&lt;div class&#x3D;&quot;row&quot;&gt;
+					&lt;div class&#x3D;&quot;medium-12 medium-centered large-8 large-centered columns&quot;&gt;
+						&lt;form&gt;
+							&lt;div class&#x3D;&quot;row column log-in-form &quot;&gt;
+								&lt;h4&gt;Sign in to your account&lt;/h4&gt;
+								&lt;p&gt;Hello, This login is just for sport &lt;br/&gt; centers.&lt;/p&gt;
+
+								&lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Email&quot;&gt;
+								&lt;/label&gt;
+
+								&lt;input type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot;&gt;
+								&lt;/label&gt;
+
+								&lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;text-center&quot; id&#x3D;&quot;test2&quot; checked&#x3D;&quot;checked&quot; /&gt;
+								&lt;label for&#x3D;&quot;test2&quot;&gt;Remember me&lt;/label&gt;
+
+								&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot;&gt;
+								&lt;p class&#x3D;&quot;text-center&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Forgot your password?&lt;/a&gt;&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/form&gt;
+
 					&lt;/div&gt;
-					&lt;div class&#x3D;&quot;select-options&quot;&gt;
-						&lt;ul&gt;
-							&lt;li&gt;
-								&lt;span&gt;Lokacioni&lt;/span&gt;
-							&lt;/li&gt;
-							&lt;li&gt;
-								&lt;span&gt;Option 2&lt;/span&gt;
-							&lt;/li&gt;
-							&lt;li&gt;
-								&lt;span&gt;Option 3&lt;/span&gt;
-							&lt;/li&gt;
-							&lt;li&gt;
-								&lt;span&gt;Option 4&lt;/li&gt;
+				&lt;/div&gt; &lt;button class&#x3D;&quot;close-button&quot; data-close aria-label&#x3D;&quot;Close modal&quot; type&#x3D;&quot;button&quot;&gt;
+			    &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+			  &lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/header&gt;
+	&lt;div class&#x3D;&quot;home-forms&quot;&gt;
+		&lt;div class&#x3D;&quot;select-width&quot;&gt;
+			&lt;div class&#x3D;&quot;select&quot;&gt;
+				&lt;div class&#x3D;&quot;input&quot;&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;select-options&quot;&gt;
+					&lt;ul&gt;
+						&lt;li&gt;
+							&lt;span style&#x3D;&quot;display:none&quot;&gt;Lokacioni&lt;/span&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;span&gt;Option 2&lt;/span&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;span&gt;Option 3&lt;/span&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;span&gt;Option 4&lt;/li&gt;
 		      &lt;/ul&gt;
 		    &lt;/div&gt;
 		  &lt;/div&gt;
@@ -1181,16 +1191,16 @@
 		    &lt;div class&#x3D;&quot;days-select-options&quot;&gt;
 		      &lt;ul&gt;
 		        &lt;li &gt;
-		          &lt;span&gt;Dita ?&lt;/span&gt;
-							&lt;/li&gt;
-							&lt;li&gt;
-								&lt;span&gt;E Hënë&lt;/span&gt;
-							&lt;/li&gt;
-							&lt;li&gt;
-								&lt;span&gt;E Martë&lt;/span&gt;
-							&lt;/li&gt;
-							&lt;li&gt;
-								&lt;span&gt;E Mërkure&lt;/li&gt;
+		          &lt;span style&#x3D;&quot;display:none&quot;&gt;Dita ?&lt;/span&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;span&gt;E Hënë&lt;/span&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;span&gt;E Martë&lt;/span&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;span&gt;E Mërkure&lt;/li&gt;
 		        &lt;li &gt;
 		          &lt;span&gt;E Enjte &lt;/li&gt;
 		      &lt;/ul&gt;
@@ -1203,37 +1213,41 @@
 		    &lt;div class&#x3D;&quot;hours-select-options&quot;&gt;
 		      &lt;ul&gt;
 		        &lt;li &gt;
-		          &lt;span&gt;Ora ?&lt;/span&gt;
-							&lt;/li&gt;
-							&lt;li&gt;
-								&lt;span&gt;E Hënë&lt;/span&gt;
-							&lt;/li&gt;
-							&lt;li&gt;
-								&lt;span&gt;E Martë&lt;/span&gt;
-							&lt;/li&gt;
-							&lt;li&gt;
-								&lt;span&gt;E Mërkure&lt;/li&gt;
+		          &lt;span style&#x3D;&quot;display:none&quot;&gt;Ora ?&lt;/span&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;span&gt;E Hënë&lt;/span&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;span&gt;E Martë&lt;/span&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;span&gt;E Mërkure&lt;/li&gt;
 		        &lt;li &gt;
 		          &lt;span&gt;E Enjte &lt;/li&gt;
 		      &lt;/ul&gt;
 		    &lt;/div&gt;
 		  &lt;/div&gt;
-		&lt;/div&gt;  		 &lt;!--Call your modal--&gt;
-		 &lt;div class&#x3D;&quot;form-modal&quot;&gt;    
-		    &lt;form action&#x3D;&quot;&quot;&gt; 
-		      &lt;input type&#x3D;&quot;submit&quot; id&#x3D;&quot;demo02&quot; href&#x3D;&quot;#modal-02&quot; class&#x3D;&quot;open-modal&quot;/&gt;
-		    &lt;/form&gt;
-		 &lt;/div&gt; 
-		
-		
-		
-		&lt;div id&#x3D;&quot;modal-02&quot; class&#x3D;&quot;modal-bg&quot;&gt;
-		    &lt;!--&quot;THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID--&gt;
-		  
-		    &lt;div class&#x3D;&quot;modal-content&quot;&gt;
-		     
-		    &lt;/div&gt;
-		&lt;/div&gt;		&lt;/div&gt;
+		&lt;/div&gt;  			 &lt;!--Call your modal--&gt;
+	 &lt;div class&#x3D;&quot;form-modal&quot;&gt;    
+	    &lt;form action&#x3D;&quot;&quot;&gt; 
+	      &lt;input type&#x3D;&quot;submit&quot; id&#x3D;&quot;demo02&quot; href&#x3D;&quot;#modal-02&quot; class&#x3D;&quot;open-modal&quot;/&gt;
+	    &lt;/form&gt;
+	 &lt;/div&gt; 
+
+
+
+	&lt;div id&#x3D;&quot;modal-02&quot; class&#x3D;&quot;modal-bg&quot;&gt;
+	    &lt;!--&quot;THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID--&gt;
+	  
+	    &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+	   
+	     
+
+	      
+	    &lt;/div&gt;
+	&lt;/div&gt;
+
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
@@ -2063,8 +2077,10 @@
 	<header class="transparent-header">
 	<div class="header-padding">
 		<div class="logo-section">
-			<img src="undefined/assets/toolkit/images/soccer.svg" class="logo">
-			<h2>Terminet</h2>
+			<a href="home.html">
+				<img src="undefined/assets/toolkit/images/soccer.svg" class="logo">
+				<h2>Terminet</h2>
+			</a>
 		</div>
 
 		<a data-open="exampleModal1" class="base-button">Sign In</a>
@@ -2103,8 +2119,10 @@
 	<pre><code class="language-markup">&lt;header class&#x3D;&quot;transparent-header&quot;&gt;
 	&lt;div class&#x3D;&quot;header-padding&quot;&gt;
 		&lt;div class&#x3D;&quot;logo-section&quot;&gt;
-			&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/soccer.svg&quot; class&#x3D;&quot;logo&quot;&gt;
-			&lt;h2&gt;Terminet&lt;/h2&gt;
+			&lt;a href&#x3D;&quot;home.html&quot;&gt;
+				&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/soccer.svg&quot; class&#x3D;&quot;logo&quot;&gt;
+				&lt;h2&gt;Terminet&lt;/h2&gt;
+			&lt;/a&gt;
 		&lt;/div&gt;
 
 		&lt;a data-open&#x3D;&quot;exampleModal1&quot; class&#x3D;&quot;base-button&quot;&gt;Sign In&lt;/a&gt;

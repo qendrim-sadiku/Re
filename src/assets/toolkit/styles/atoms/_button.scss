@@ -1,4 +1,5 @@
 .base-button {
+	z-index:1;
 	background:transparent;
 	border:1px solid $white;
 	border-radius:100px;
@@ -16,4 +17,13 @@
 		border:1px solid $primary-color;
 		color: $white;
 	}
+	@include breakpoint(small only) {
+		display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: column;
+	    flex-direction: column;
+	   
+	    text-align: center;   
+	    margin-left: 100px;	
+   	}		
 }
