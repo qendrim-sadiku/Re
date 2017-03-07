@@ -1,0 +1,23 @@
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui1.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <div class="calendar-bg">
+      <script>
+      $(function() {
+        $( "#datepicker" ).datepicker({
+          showOtherMonths: true,
+          selectOtherMonths: true,
+          numberOfMonths: 1,
+          altField: "#alternate",
+          altFormat: "d M, yy",
+          minDate: 0, 
+          maxDate: "+1Y +1D"
+        });
+      });
+      </script>
+    <label for="input">Sot</label>
+    <input id="alternate"/> 
+    <div id="datepicker"></div>
+ </div>
+ 

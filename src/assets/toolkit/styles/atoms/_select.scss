@@ -98,7 +98,7 @@
       transform: rotate(45deg);
     }   
   }
-  @include breakpoint(small only) {      
+  @include breakpoint(xs-small only) {      
     width: 100%;    
     margin-bottom: 20px;
     z-index: 1;

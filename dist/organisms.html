@@ -125,7 +125,13 @@
 		
 									<ul class="f-menu_accordion">
 											<li>
+												<a href="atoms.html#tables.second-table">Second Table</a>
+											</li>
+											<li>
 												<a href="atoms.html#tables.table">Table</a>
+											</li>
+											<li>
+												<a href="atoms.html#tables.third-table">Third Table</a>
 											</li>
 									</ul>
 							</li>
@@ -176,6 +182,9 @@
 											</li>
 											<li>
 												<a href="molecules.html#components.hero">Hero</a>
+											</li>
+											<li>
+												<a href="molecules.html#components.remodal">Remodal</a>
 											</li>
 											<li>
 												<a href="molecules.html#components.result">Result</a>
@@ -256,6 +265,14 @@
 		
 							</li>
 								<li>
+								<a href="organisms.html#calendar">Calendar</a>
+		
+							</li>
+								<li>
+								<a href="organisms.html#dashboard-header">Dashboard Header</a>
+		
+							</li>
+								<li>
 								<a href="organisms.html#footer">Footer</a>
 		
 							</li>
@@ -277,6 +294,10 @@
 							</li>
 								<li>
 								<a href="organisms.html#location">Location</a>
+		
+							</li>
+								<li>
+								<a href="organisms.html#managment-section">Managment Section</a>
 		
 							</li>
 								<li>
@@ -302,6 +323,12 @@
 					<a href="pages.html" class="f-menu__heading">Pages</a>
 					<ul>
 						<li>
+							<a href="pages/dashboard-info.html" target="_blank">Dashboard Info</a>
+						</li>
+						<li>
+							<a href="pages/dashboard-reservation.html" target="_blank">Dashboard Reservation</a>
+						</li>
+						<li>
 							<a href="pages/home.html" target="_blank">Home</a>
 						</li>
 						<li>
@@ -309,9 +336,6 @@
 						</li>
 						<li>
 							<a href="pages/show-page.html" target="_blank">Show Page</a>
-						</li>
-						<li>
-							<a href="pages/single-event.html" target="_blank">Single Event</a>
 						</li>
 					</ul>
 				</li>
@@ -792,6 +816,142 @@
 </div>
 
 
+<div class="f-item-group" id="calendar">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Calendar</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui1.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<div class="calendar-bg">
+	<script>
+		$(function() {
+			$("#datepicker").datepicker({
+				showOtherMonths: true,
+				selectOtherMonths: true,
+				numberOfMonths: 1,
+				altField: "#alternate",
+				altFormat: "d M, yy",
+				minDate: 0,
+				maxDate: "+1Y +1D"
+			});
+		});
+	</script>
+	<label for="input">Sot</label>
+	<input id="alternate" />
+	<div id="datepicker"></div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui1.css&quot;&gt;
+&lt;script src&#x3D;&quot;//code.jquery.com/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;//code.jquery.com/ui/1.11.1/jquery-ui.js&quot;&gt;&lt;/script&gt;
+&lt;div class&#x3D;&quot;calendar-bg&quot;&gt;
+	&lt;script&gt;
+		$(function() {
+			$(&quot;#datepicker&quot;).datepicker({
+				showOtherMonths: true,
+				selectOtherMonths: true,
+				numberOfMonths: 1,
+				altField: &quot;#alternate&quot;,
+				altFormat: &quot;d M, yy&quot;,
+				minDate: 0,
+				maxDate: &quot;+1Y +1D&quot;
+			});
+		});
+	&lt;/script&gt;
+	&lt;label for&#x3D;&quot;input&quot;&gt;Sot&lt;/label&gt;
+	&lt;input id&#x3D;&quot;alternate&quot; /&gt;
+	&lt;div id&#x3D;&quot;datepicker&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="dashboard-header">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Dashboard Header</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<div class="dashboard-header">
+	<div class="dashboard-info">
+		<header class="header">
+			<div class="header-padding">
+				<div class="logo-section">
+					<a href="home.html">
+						<img src="undefined/assets/toolkit/images/soccer.svg" class="logo">
+						<h2>Terminet</h2>
+					</a>
+				</div>
+				<a href="home.html" class="log-out">Log out</a>
+			</div>
+
+		</header>
+		<div class="area-and-user">
+			<div class="user-area-info">
+				<i class="fa fa-futbol-o" aria-hidden="true"></i>
+				<h4>Prince Sport Center</h4>
+			</div>
+			<div class="area-links">
+				<a href="dashboard-reservation.html" class="active">Terminet</a>
+				<a href="#">Info</a>
+
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;dashboard-header&quot;&gt;
+	&lt;div class&#x3D;&quot;dashboard-info&quot;&gt;
+		&lt;header class&#x3D;&quot;header&quot;&gt;
+			&lt;div class&#x3D;&quot;header-padding&quot;&gt;
+				&lt;div class&#x3D;&quot;logo-section&quot;&gt;
+					&lt;a href&#x3D;&quot;home.html&quot;&gt;
+						&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/soccer.svg&quot; class&#x3D;&quot;logo&quot;&gt;
+						&lt;h2&gt;Terminet&lt;/h2&gt;
+					&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;a href&#x3D;&quot;home.html&quot; class&#x3D;&quot;log-out&quot;&gt;Log out&lt;/a&gt;
+			&lt;/div&gt;
+
+		&lt;/header&gt;
+		&lt;div class&#x3D;&quot;area-and-user&quot;&gt;
+			&lt;div class&#x3D;&quot;user-area-info&quot;&gt;
+				&lt;i class&#x3D;&quot;fa fa-futbol-o&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+				&lt;h4&gt;Prince Sport Center&lt;/h4&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;area-links&quot;&gt;
+				&lt;a href&#x3D;&quot;dashboard-reservation.html&quot; class&#x3D;&quot;active&quot;&gt;Terminet&lt;/a&gt;
+				&lt;a href&#x3D;&quot;#&quot;&gt;Info&lt;/a&gt;
+
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
 <div class="f-item-group" id="footer">
 
 	<div class="f-item-heading-group" data-f-toggle="labels">
@@ -1099,27 +1259,7 @@
 		      </ul>
 		    </div>
 		  </div>
-		</div>  			 <!--Call your modal-->
-	 <div class="form-modal">    
-	    <form action=""> 
-	      <input type="submit" id="demo02" href="#modal-02" class="open-modal"/>
-	    </form>
-	 </div> 
-
-
-
-	<div id="modal-02" class="modal-bg">
-	    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
-	  
-	    <div class="modal-content">
-	   
-	     
-
-	      
-	    </div>
-	</div>
-
-	</div>
+		</div>  	</div>
 </div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
@@ -1228,27 +1368,7 @@
 		      &lt;/ul&gt;
 		    &lt;/div&gt;
 		  &lt;/div&gt;
-		&lt;/div&gt;  			 &lt;!--Call your modal--&gt;
-	 &lt;div class&#x3D;&quot;form-modal&quot;&gt;    
-	    &lt;form action&#x3D;&quot;&quot;&gt; 
-	      &lt;input type&#x3D;&quot;submit&quot; id&#x3D;&quot;demo02&quot; href&#x3D;&quot;#modal-02&quot; class&#x3D;&quot;open-modal&quot;/&gt;
-	    &lt;/form&gt;
-	 &lt;/div&gt; 
-
-
-
-	&lt;div id&#x3D;&quot;modal-02&quot; class&#x3D;&quot;modal-bg&quot;&gt;
-	    &lt;!--&quot;THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID--&gt;
-	  
-	    &lt;div class&#x3D;&quot;modal-content&quot;&gt;
-	   
-	     
-
-	      
-	    &lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;/div&gt;
+		&lt;/div&gt;  	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
 
@@ -1388,6 +1508,618 @@
 		&lt;/div&gt;
 
 
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="managment-section">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Managment Section</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<div class="managment-section-tabs">
+	<div class="managment-tab">
+		<ul class="tabs">
+			<li><a href="#">PARADITE</a></li>
+			<li><a href="#">Mesdite</a></li>
+			<li><a href="#">Mbrëmje </a></li>
+
+		</ul>
+		<!-- / tabs -->
+
+		<div class="tab_content">
+
+			<div class="tabs_item">
+				<table>
+					<thead>
+						<tr>
+							<td>Orët</td>
+							<td>Fusha 1</td>
+							<td>Fusha 1</td>
+							<td>Fusha 1</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+
+							<td><span>05:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>06:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>07:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>08:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>09:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>10:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>11:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>12:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+					<div class="modal-heading">
+						<button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+						<div>
+							<h4 class="modal-h4">Shto Terminin</h4>
+						</div>
+					</div>
+					<div class="definition">
+						<h4>Pershkrimi</h4>
+						<p>Motivation The defining Moment Of Self Imporiement </p>
+					</div>
+					<div class="phone-number">
+						<h4>Numri i Telefonit</h4>
+					</div>
+					<div class="reservation-hour">
+						<h4>Ora E Terminit:</h4>
+
+						<div class="time-pick">
+							<span>19:00</span>-
+							<span>20:00</span>
+						</div>
+					</div>
+					<br>
+					<div class="button-section">
+
+						<button data-remodal-action="cancel" class="remodal-cancel">Anulo</button>
+						<button data-remodal-action="confirm" class="remodal-confirm">Shto</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="tabs_item">
+				<table>
+					<thead>
+						<tr>
+							<td>Orët</td>
+							<td>Fusha 1</td>
+							<td>Fusha 1</td>
+							<td>Fusha 1</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+
+							<td><span>05:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>06:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>07:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>08:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>09:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>10:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>11:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>12:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+					<div class="modal-heading">
+						<button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+						<div>
+							<h4 class="modal-h4">Shto Terminin</h4>
+						</div>
+					</div>
+					<div class="definition">
+						<h4>Pershkrimi</h4>
+						<p>Motivation The defining Moment Of Self Imporiement </p>
+					</div>
+					<div class="phone-number">
+						<h4>Numri i Telefonit</h4>
+					</div>
+					<div class="reservation-hour">
+						<h4>Ora E Terminit:</h4>
+
+						<div class="time-pick">
+							<span>19:00</span>-
+							<span>20:00</span>
+						</div>
+					</div>
+					<br>
+					<div class="button-section">
+
+						<button data-remodal-action="cancel" class="remodal-cancel">Anulo</button>
+						<button data-remodal-action="confirm" class="remodal-confirm">Shto</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="tabs_item">
+				<table>
+					<thead>
+						<tr>
+							<td>Orët</td>
+							<td>Fusha 1</td>
+							<td>Fusha 1</td>
+							<td>Fusha 1</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+
+							<td><span>05:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>06:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>07:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>08:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>09:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>10:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>11:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+						<tr>
+							<td><span>12:00</span></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+							<td><a href="#modal">&nbsp;</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+					<div class="modal-heading">
+						<button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+						<div>
+							<h4 class="modal-h4">Shto Terminin</h4>
+						</div>
+					</div>
+					<div class="definition">
+						<h4>Pershkrimi</h4>
+						<p>Motivation The defining Moment Of Self Imporiement </p>
+					</div>
+					<div class="phone-number">
+						<h4>Numri i Telefonit</h4>
+					</div>
+					<div class="reservation-hour">
+						<h4>Ora E Terminit:</h4>
+
+						<div class="time-pick">
+							<span>19:00</span>-
+							<span>20:00</span>
+						</div>
+					</div>
+					<br>
+					<div class="button-section">
+
+						<button data-remodal-action="cancel" class="remodal-cancel">Anulo</button>
+						<button data-remodal-action="confirm" class="remodal-confirm">Shto</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;managment-section-tabs&quot;&gt;
+	&lt;div class&#x3D;&quot;managment-tab&quot;&gt;
+		&lt;ul class&#x3D;&quot;tabs&quot;&gt;
+			&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;PARADITE&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Mesdite&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Mbrëmje &lt;/a&gt;&lt;/li&gt;
+
+		&lt;/ul&gt;
+		&lt;!-- / tabs --&gt;
+
+		&lt;div class&#x3D;&quot;tab_content&quot;&gt;
+
+			&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+				&lt;table&gt;
+					&lt;thead&gt;
+						&lt;tr&gt;
+							&lt;td&gt;Orët&lt;/td&gt;
+							&lt;td&gt;Fusha 1&lt;/td&gt;
+							&lt;td&gt;Fusha 1&lt;/td&gt;
+							&lt;td&gt;Fusha 1&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/thead&gt;
+					&lt;tbody&gt;
+						&lt;tr&gt;
+
+							&lt;td&gt;&lt;span&gt;05:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;06:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;07:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;08:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;09:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;10:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;11:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;12:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/tbody&gt;
+				&lt;/table&gt;
+
+				&lt;div class&#x3D;&quot;remodal&quot; data-remodal-id&#x3D;&quot;modal&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;modal1Title&quot; aria-describedby&#x3D;&quot;modal1Desc&quot;&gt;
+					&lt;div class&#x3D;&quot;modal-heading&quot;&gt;
+						&lt;button data-remodal-action&#x3D;&quot;close&quot; class&#x3D;&quot;remodal-close&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;/button&gt;
+						&lt;div&gt;
+							&lt;h4 class&#x3D;&quot;modal-h4&quot;&gt;Shto Terminin&lt;/h4&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;definition&quot;&gt;
+						&lt;h4&gt;Pershkrimi&lt;/h4&gt;
+						&lt;p&gt;Motivation The defining Moment Of Self Imporiement &lt;/p&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;phone-number&quot;&gt;
+						&lt;h4&gt;Numri i Telefonit&lt;/h4&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;reservation-hour&quot;&gt;
+						&lt;h4&gt;Ora E Terminit:&lt;/h4&gt;
+
+						&lt;div class&#x3D;&quot;time-pick&quot;&gt;
+							&lt;span&gt;19:00&lt;/span&gt;-
+							&lt;span&gt;20:00&lt;/span&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;br&gt;
+					&lt;div class&#x3D;&quot;button-section&quot;&gt;
+
+						&lt;button data-remodal-action&#x3D;&quot;cancel&quot; class&#x3D;&quot;remodal-cancel&quot;&gt;Anulo&lt;/button&gt;
+						&lt;button data-remodal-action&#x3D;&quot;confirm&quot; class&#x3D;&quot;remodal-confirm&quot;&gt;Shto&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+				&lt;table&gt;
+					&lt;thead&gt;
+						&lt;tr&gt;
+							&lt;td&gt;Orët&lt;/td&gt;
+							&lt;td&gt;Fusha 1&lt;/td&gt;
+							&lt;td&gt;Fusha 1&lt;/td&gt;
+							&lt;td&gt;Fusha 1&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/thead&gt;
+					&lt;tbody&gt;
+						&lt;tr&gt;
+
+							&lt;td&gt;&lt;span&gt;05:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;06:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;07:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;08:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;09:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;10:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;11:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;12:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/tbody&gt;
+				&lt;/table&gt;
+
+				&lt;div class&#x3D;&quot;remodal&quot; data-remodal-id&#x3D;&quot;modal&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;modal1Title&quot; aria-describedby&#x3D;&quot;modal1Desc&quot;&gt;
+					&lt;div class&#x3D;&quot;modal-heading&quot;&gt;
+						&lt;button data-remodal-action&#x3D;&quot;close&quot; class&#x3D;&quot;remodal-close&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;/button&gt;
+						&lt;div&gt;
+							&lt;h4 class&#x3D;&quot;modal-h4&quot;&gt;Shto Terminin&lt;/h4&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;definition&quot;&gt;
+						&lt;h4&gt;Pershkrimi&lt;/h4&gt;
+						&lt;p&gt;Motivation The defining Moment Of Self Imporiement &lt;/p&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;phone-number&quot;&gt;
+						&lt;h4&gt;Numri i Telefonit&lt;/h4&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;reservation-hour&quot;&gt;
+						&lt;h4&gt;Ora E Terminit:&lt;/h4&gt;
+
+						&lt;div class&#x3D;&quot;time-pick&quot;&gt;
+							&lt;span&gt;19:00&lt;/span&gt;-
+							&lt;span&gt;20:00&lt;/span&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;br&gt;
+					&lt;div class&#x3D;&quot;button-section&quot;&gt;
+
+						&lt;button data-remodal-action&#x3D;&quot;cancel&quot; class&#x3D;&quot;remodal-cancel&quot;&gt;Anulo&lt;/button&gt;
+						&lt;button data-remodal-action&#x3D;&quot;confirm&quot; class&#x3D;&quot;remodal-confirm&quot;&gt;Shto&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class&#x3D;&quot;tabs_item&quot;&gt;
+				&lt;table&gt;
+					&lt;thead&gt;
+						&lt;tr&gt;
+							&lt;td&gt;Orët&lt;/td&gt;
+							&lt;td&gt;Fusha 1&lt;/td&gt;
+							&lt;td&gt;Fusha 1&lt;/td&gt;
+							&lt;td&gt;Fusha 1&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/thead&gt;
+					&lt;tbody&gt;
+						&lt;tr&gt;
+
+							&lt;td&gt;&lt;span&gt;05:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;06:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;07:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;08:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;09:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;10:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;11:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+						&lt;tr&gt;
+							&lt;td&gt;&lt;span&gt;12:00&lt;/span&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;a href&#x3D;&quot;#modal&quot;&gt;&amp;nbsp;&lt;/a&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/tbody&gt;
+				&lt;/table&gt;
+
+				&lt;div class&#x3D;&quot;remodal&quot; data-remodal-id&#x3D;&quot;modal&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;modal1Title&quot; aria-describedby&#x3D;&quot;modal1Desc&quot;&gt;
+					&lt;div class&#x3D;&quot;modal-heading&quot;&gt;
+						&lt;button data-remodal-action&#x3D;&quot;close&quot; class&#x3D;&quot;remodal-close&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;/button&gt;
+						&lt;div&gt;
+							&lt;h4 class&#x3D;&quot;modal-h4&quot;&gt;Shto Terminin&lt;/h4&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;definition&quot;&gt;
+						&lt;h4&gt;Pershkrimi&lt;/h4&gt;
+						&lt;p&gt;Motivation The defining Moment Of Self Imporiement &lt;/p&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;phone-number&quot;&gt;
+						&lt;h4&gt;Numri i Telefonit&lt;/h4&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;reservation-hour&quot;&gt;
+						&lt;h4&gt;Ora E Terminit:&lt;/h4&gt;
+
+						&lt;div class&#x3D;&quot;time-pick&quot;&gt;
+							&lt;span&gt;19:00&lt;/span&gt;-
+							&lt;span&gt;20:00&lt;/span&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;br&gt;
+					&lt;div class&#x3D;&quot;button-section&quot;&gt;
+
+						&lt;button data-remodal-action&#x3D;&quot;cancel&quot; class&#x3D;&quot;remodal-cancel&quot;&gt;Anulo&lt;/button&gt;
+						&lt;button data-remodal-action&#x3D;&quot;confirm&quot; class&#x3D;&quot;remodal-confirm&quot;&gt;Shto&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
@@ -2007,7 +2739,6 @@
 			<img src="undefined/assets/toolkit/images/full-wall.jpg">
 			<p class="flex-caption"><i class="fa fa-phone" aria-hidden="true"></i> 044-123-456</p>
 		</li>
-
 		<li>
 			<img src="undefined/assets/toolkit/images/full-wall.jpg">
 			<p class="flex-caption"><i class="fa fa-phone" aria-hidden="true"></i> 044-123-456</p>
@@ -2015,15 +2746,10 @@
 		<li>
 			<img src="undefined/assets/toolkit/images/full-wall.jpg">
 			<p class="flex-caption"><i class="fa fa-phone" aria-hidden="true"></i> 044-123-456</p>
-
-
-
 		</li>
 		<li>
 			<img src="undefined/assets/toolkit/images/full-wall.jpg">
 			<p class="flex-caption"><i class="fa fa-phone" aria-hidden="true"></i> 044-123-456</p>
-
-
 		</li>
 	</ul>
 </div>
@@ -2036,7 +2762,6 @@
 			&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/full-wall.jpg&quot;&gt;
 			&lt;p class&#x3D;&quot;flex-caption&quot;&gt;&lt;i class&#x3D;&quot;fa fa-phone&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; 044-123-456&lt;/p&gt;
 		&lt;/li&gt;
-
 		&lt;li&gt;
 			&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/full-wall.jpg&quot;&gt;
 			&lt;p class&#x3D;&quot;flex-caption&quot;&gt;&lt;i class&#x3D;&quot;fa fa-phone&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; 044-123-456&lt;/p&gt;
@@ -2044,15 +2769,10 @@
 		&lt;li&gt;
 			&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/full-wall.jpg&quot;&gt;
 			&lt;p class&#x3D;&quot;flex-caption&quot;&gt;&lt;i class&#x3D;&quot;fa fa-phone&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; 044-123-456&lt;/p&gt;
-
-
-
 		&lt;/li&gt;
 		&lt;li&gt;
 			&lt;img src&#x3D;&quot;undefined/assets/toolkit/images/full-wall.jpg&quot;&gt;
 			&lt;p class&#x3D;&quot;flex-caption&quot;&gt;&lt;i class&#x3D;&quot;fa fa-phone&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; 044-123-456&lt;/p&gt;
-
-
 		&lt;/li&gt;
 	&lt;/ul&gt;
 &lt;/div&gt;</code></pre>

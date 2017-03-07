@@ -39,7 +39,12 @@ var foundationTabs = require('../../vendor/foundation-sites/js/foundation.tabs.j
 var flexslider = require ('../../vendor/flexslider/jquery.flexslider-min.js');	
 var flexslider = require ('../../vendor/flexslider/jquery.flexslider-min.js');	
 
+// Loading remodal from node
+
+var remodal = require ('../../vendor/remodal/dist/remodal.js');
 	
+// Loading Jquery UI from node
+
 // console.log($);
 // $('h1').fadeOut(2000);
 
@@ -53,6 +58,7 @@ require('./modules/tabs');
 require('./modules/file-input');
 require('./modules/animatedModal');
 require('./modules/modal');
+require('./modules/calendar');
 require('./modules/slider');
 
 // Finally, you can drop test JavaScript here...

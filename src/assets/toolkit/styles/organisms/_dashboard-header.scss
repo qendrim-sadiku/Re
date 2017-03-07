@@ -1,0 +1,91 @@
+.dashboard-header {
+	background:$primary;
+	position: relative;
+	.dashboard-info {	
+		@include grid-row();
+		.header {			
+	 		padding-bottom: 80px;
+			z-index: 1;
+			border-bottom: 1px solid #f2f8fa;		
+				
+			.header-padding {
+				padding-top:30px;	
+				
+				.logo-section {
+					display: flex;
+					float: left;
+					a {
+						color: $white;
+						display: flex;			
+						h2 {
+							margin-top: 0px;
+							margin-left: 10px;
+							font-size: 29px;
+							font-weight: 400;
+							font-family: $font-family;
+						}
+					}
+
+					@include breakpoint(xs-small only) {
+						width: 10%;
+			    	img {
+			    		margin-right:-10px;
+				    	}		    	
+				    }    	
+				}	
+				.log-out {
+					float: right;
+					color: $white;
+					vertical-align: middle;
+					margin-top: 10px;
+					font-weight: 500;
+					font-size: 15px;				
+				}	
+
+			}				
+		}
+		.area-and-user {
+			margin-top: 27px;
+			margin-bottom: 26px;
+			display: flex;
+			
+			.user-area-info {
+				position: relative;
+				display: flex;
+				i {
+					color: $white;
+					font-size: 40px;
+					margin-right: 15px;
+				}
+				h4 {
+					color: $white;
+					font-size: 16px;
+					margin-top: 12px;
+				}
+				&:after {
+					position: absolute;
+					left: 250px;
+					content: '';
+					height: 48px;
+					width: 2px;
+					background:$white;				
+				}
+			}
+			.area-links {
+				margin-left: 100px;
+				margin-top: 12px;
+				a {
+					text-transform: uppercase;
+					opacity: 0.6;
+					color: $white;
+					font-size: 15px;
+					font-weight: 500;
+					padding-right: 30px;
+				}
+				.active {
+					opacity: 1;
+				}
+			}
+		}		
+	}	
+}

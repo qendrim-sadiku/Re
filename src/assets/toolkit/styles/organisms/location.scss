@@ -20,7 +20,7 @@
 				font-size: 15px;
 				font-weight: 300;
 			}
-			@include breakpoint(small only) {
+			@include breakpoint(xs-small only) {
 				@include grid-column(12);
 				margin-bottom: 50px;		    		    	
 		    }    	
@@ -44,8 +44,7 @@
 			color: #0a184a;
 			font-size: 15px;
 			
-		}
-
+		}		
 	}
 	.map {
 		@include grid-column(7);
@@ -58,7 +57,7 @@
 			@include scut-coords(0 0 0 0);
 			position: absolute !important;
 		}
-	   
+		
 	}
 }
 

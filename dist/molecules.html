@@ -125,7 +125,13 @@
 		
 									<ul class="f-menu_accordion">
 											<li>
+												<a href="atoms.html#tables.second-table">Second Table</a>
+											</li>
+											<li>
 												<a href="atoms.html#tables.table">Table</a>
+											</li>
+											<li>
+												<a href="atoms.html#tables.third-table">Third Table</a>
 											</li>
 									</ul>
 							</li>
@@ -176,6 +182,9 @@
 											</li>
 											<li>
 												<a href="molecules.html#components.hero">Hero</a>
+											</li>
+											<li>
+												<a href="molecules.html#components.remodal">Remodal</a>
 											</li>
 											<li>
 												<a href="molecules.html#components.result">Result</a>
@@ -256,6 +265,14 @@
 		
 							</li>
 								<li>
+								<a href="organisms.html#calendar">Calendar</a>
+		
+							</li>
+								<li>
+								<a href="organisms.html#dashboard-header">Dashboard Header</a>
+		
+							</li>
+								<li>
 								<a href="organisms.html#footer">Footer</a>
 		
 							</li>
@@ -277,6 +294,10 @@
 							</li>
 								<li>
 								<a href="organisms.html#location">Location</a>
+		
+							</li>
+								<li>
+								<a href="organisms.html#managment-section">Managment Section</a>
 		
 							</li>
 								<li>
@@ -302,6 +323,12 @@
 					<a href="pages.html" class="f-menu__heading">Pages</a>
 					<ul>
 						<li>
+							<a href="pages/dashboard-info.html" target="_blank">Dashboard Info</a>
+						</li>
+						<li>
+							<a href="pages/dashboard-reservation.html" target="_blank">Dashboard Reservation</a>
+						</li>
+						<li>
 							<a href="pages/home.html" target="_blank">Home</a>
 						</li>
 						<li>
@@ -309,9 +336,6 @@
 						</li>
 						<li>
 							<a href="pages/show-page.html" target="_blank">Show Page</a>
-						</li>
-						<li>
-							<a href="pages/single-event.html" target="_blank">Single Event</a>
 						</li>
 					</ul>
 				</li>
@@ -1056,6 +1080,80 @@
 </div>
 
 		</div>
+		<div class="f-item-group" id="components.remodal">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Remodal</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+	<div class="modal-heading">
+		<button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+		<div>
+			<h4 class="modal-h4">Shto Terminin</h4>
+		</div>
+	</div>
+	<div class="definition">
+		<h4>Pershkrimi</h4>
+		<p>Motivation The defining Moment Of Self Imporiement </p>
+	</div>
+	<div class="phone-number">
+		<h4>Numri i Telefonit</h4>
+	</div>
+	<div class="reservation-hour">
+		<h4>Ora E Terminit:</h4>
+
+		<div class="time-pick">
+			<span>19:00</span>-
+			<span>20:00</span>
+		</div>
+	</div>
+	<br>
+	<div class="button-section">
+
+		<button data-remodal-action="cancel" class="remodal-cancel">Anulo</button>
+		<button data-remodal-action="confirm" class="remodal-confirm">Shto</button>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;remodal&quot; data-remodal-id&#x3D;&quot;modal&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;modal1Title&quot; aria-describedby&#x3D;&quot;modal1Desc&quot;&gt;
+	&lt;div class&#x3D;&quot;modal-heading&quot;&gt;
+		&lt;button data-remodal-action&#x3D;&quot;close&quot; class&#x3D;&quot;remodal-close&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;/button&gt;
+		&lt;div&gt;
+			&lt;h4 class&#x3D;&quot;modal-h4&quot;&gt;Shto Terminin&lt;/h4&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;definition&quot;&gt;
+		&lt;h4&gt;Pershkrimi&lt;/h4&gt;
+		&lt;p&gt;Motivation The defining Moment Of Self Imporiement &lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;phone-number&quot;&gt;
+		&lt;h4&gt;Numri i Telefonit&lt;/h4&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;reservation-hour&quot;&gt;
+		&lt;h4&gt;Ora E Terminit:&lt;/h4&gt;
+
+		&lt;div class&#x3D;&quot;time-pick&quot;&gt;
+			&lt;span&gt;19:00&lt;/span&gt;-
+			&lt;span&gt;20:00&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;br&gt;
+	&lt;div class&#x3D;&quot;button-section&quot;&gt;
+
+		&lt;button data-remodal-action&#x3D;&quot;cancel&quot; class&#x3D;&quot;remodal-cancel&quot;&gt;Anulo&lt;/button&gt;
+		&lt;button data-remodal-action&#x3D;&quot;confirm&quot; class&#x3D;&quot;remodal-confirm&quot;&gt;Shto&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="components.result">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Result</h3>
@@ -1172,27 +1270,7 @@
 		      </ul>
 		    </div>
 		  </div>
-		</div>  			 <!--Call your modal-->
-	 <div class="form-modal">    
-	    <form action=""> 
-	      <input type="submit" id="demo02" href="#modal-02" class="open-modal"/>
-	    </form>
-	 </div> 
-
-
-
-	<div id="modal-02" class="modal-bg">
-	    <!--"THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID-->
-	  
-	    <div class="modal-content">
-	   
-	     
-
-	      
-	    </div>
-	</div>
-
-	</div>
+		</div>  	</div>
 </div>
 <div id="integration-list" class="bounce">
     <ul>
@@ -1469,27 +1547,7 @@
 		      &lt;/ul&gt;
 		    &lt;/div&gt;
 		  &lt;/div&gt;
-		&lt;/div&gt;  			 &lt;!--Call your modal--&gt;
-	 &lt;div class&#x3D;&quot;form-modal&quot;&gt;    
-	    &lt;form action&#x3D;&quot;&quot;&gt; 
-	      &lt;input type&#x3D;&quot;submit&quot; id&#x3D;&quot;demo02&quot; href&#x3D;&quot;#modal-02&quot; class&#x3D;&quot;open-modal&quot;/&gt;
-	    &lt;/form&gt;
-	 &lt;/div&gt; 
-
-
-
-	&lt;div id&#x3D;&quot;modal-02&quot; class&#x3D;&quot;modal-bg&quot;&gt;
-	    &lt;!--&quot;THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID--&gt;
-	  
-	    &lt;div class&#x3D;&quot;modal-content&quot;&gt;
-	   
-	     
-
-	      
-	    &lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;/div&gt;
+		&lt;/div&gt;  	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div id&#x3D;&quot;integration-list&quot; class&#x3D;&quot;bounce&quot;&gt;
     &lt;ul&gt;

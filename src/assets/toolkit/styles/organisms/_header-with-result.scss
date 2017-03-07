@@ -22,16 +22,46 @@
 						font-family: $font-family;
 					}
 				}
+				@include breakpoint(xs-small only) {
+					width: 10%;
+		    	img {
+		    		margin-right:-10px;
+			    	}		    	
+			    }    	
 			}
 				
 		}
 		border-bottom: 1px solid #fff;		
 	}
 	.home-forms {
-
+		
 		@include grid-row();
 		display: flex;
 		margin-top: 95px;
 		padding-bottom: 30px;
+		@include breakpoint(xs-small only) {
+		    	width: 100%;
+		    	float: none;		     
+		    	display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+				padding-left: 20px;
+				padding-right: 20px;
+		    }
+		    @include breakpoint(medium only) {
+		    	width: 100%;
+		    	float: none;		     
+		    	display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+				padding-left: 20px;
+				padding-right: 20px;	    			    		    					
+		    }
+		    @include breakpoint(large only) {
+		    	padding-left: 20px;
+		    	padding-right:20px;    			    		    					
+		    }    	 
 	}	
 }

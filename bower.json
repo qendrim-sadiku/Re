@@ -36,6 +36,8 @@
     "Scut": "scut#^1.4.0",
     "font-awesome": "fontawesome#^4.6.3",
     "normalize-css": "^5.0.0",
-    "slick": "*"
+    "slick": "*",
+    "remodal": "^1.1.1",
+    "jquery-ui": "^1.12.1"
   }
 }

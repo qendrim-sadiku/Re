@@ -71,50 +71,14 @@ a {
 }	
 
  	   
-// FlexSlider
+
+
+
+// Dashboard Resevation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 //
 
-.flexslider {
-	margin-left: -25px;	
-	.slides {
-		li {
-			position: relative;
-		}
-	}
-	.flex-caption {
-		position: absolute;
-		bottom: 10px;
-		right: 40px;
-		padding-right: 50px;
-		padding-left: 50px;
-		padding-top:17px;
-		padding-bottom:17px;
-		background-color: $white;
-		color: $black;
-		font-size: 15px;
-		i {
-			color: $black;
-			margin-right: 20px;
-			font-size: 20px;
-		}
-		@include breakpoint(small only) {
-			padding: 10px;
-			bottom:-15px;
-			right: 20px;
-			i {
-				margin-right: 10px;
-			}			    		    	
-		}    	
-	}
-	img {
-		width: 100%;
-	}
-}
-
-.flex-direction-nav {
-	display: none;
-}
-.flex-control-paging {
-	display: none;
+.calendar-and-managment-section {
+	height: auto;
+	display:flex;
 }

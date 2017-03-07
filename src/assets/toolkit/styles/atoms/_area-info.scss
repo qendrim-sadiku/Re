@@ -19,7 +19,35 @@
         float: left;
         margin-right: 37px;
       }
+      @include breakpoint(xs-small only) {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column; 
+        img {
+         width: 100%;
+         margin-bottom: 20px;
+        }
+      }
+      @include breakpoint(small only) {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column; 
+        img {
+         width: 100%;
+         margin-bottom: 20px;
+        }
+      }
     }   
+  }
+  @include breakpoint(xs-small only) {
+    width: 100%;
+  }
+  @include breakpoint(small only) {
+    width: 100%;
   }
 }
 
@@ -45,12 +73,24 @@
         color: #0b184a;
         font-weight:300;
         text-align: left;
+         @include breakpoint(xs-small only)  {
+          margin-bottom: 40px;
+         }
+         @include breakpoint(small only)  {
+          margin-bottom: 40px;
+         }
       }
       p {
         float: left;
         margin-right: 44px;
         color: #0a184a;
         font-weight: 300;
+        @include breakpoint(xs-small only)  {
+          float: none;
+         }
+        @include breakpoint(small only)  {
+          float: none;
+         }
       }
       span {
         position: relative;
@@ -70,20 +110,28 @@
     }
     .call-info-txt {     
       .info-p {
+        margin-top: 20px;
         padding-top: 16px;
         padding-bottom: 16px;
-        padding-left: 45px;
+        padding-left: 16px;
         padding-right: 45px;
         border: solid 1px #7f98f6;
         margin-bottom: 51px;
         color: #0a184a;
         font-size: 14px;
+
         font-weight: 300;
 
         img {
           margin-right: 14px;
           color: #0a184a;
           border-radius:50px;
+        }
+        @include breakpoint(xs-small only) {
+          margin-bottom: 30px;
+        }
+        @include breakpoint(small only) {
+          margin-bottom: 30px;
         }
       }
       .phone-number {
@@ -96,13 +144,27 @@
         }
       }
     }
+    @include breakpoint(xs-small only) {
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column; 
+    }
+    @include breakpoint(small only) {
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column; 
+    }
   }
 }
 
 
 
 .detail {  
-  display: none;
+
   .collapse-txt {
     margin-top: 22px;
     display: flex;
@@ -119,6 +181,15 @@
         color: #9b9b9b;
         font-size: 14px;
         font-weight:300;
+      }
+      @include breakpoint(xs-small only) {
+        @include grid-column(12);
+      }
+      @include breakpoint(small only) {
+        @include grid-column(12); 
+      }
+      @include breakpoint(medium only) {
+        @include grid-column(12);
       }
     }
     .collapse-info-stuf {                       
@@ -147,6 +218,19 @@
         .trans {
           line-height: 40px;
         }
+      }
+      @include breakpoint(xs-small only) {
+        @include grid-column(12);
+        margin-left: 0;
+        margin-top: 10px;
+      }
+      @include breakpoint(small only) {
+        @include grid-column(12);
+        margin-left: 0;
+        margin-top: 10px;
+      }
+      @include breakpoint(medium only) {
+         @include grid-column(6);
       }
     }
     .free-res {
@@ -179,8 +263,42 @@
           margin-bottom: 25px;
         }
       }
+      @include breakpoint(xs-small only) {
+         @include grid-column(12);
+         margin-top: 20px;
+      }
+      @include breakpoint(small only) {
+        @include grid-column(12);
+        margin-left: 170px;
+        margin-top: -200px;
+      }
+      @include breakpoint(medium only) {
+        @include grid-column(6);
+        margin-top: -190px;
+        margin-left: 400px;
+      }
     }
+    @include breakpoint(xs-small only) {      
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column; 
+    }
+    @include breakpoint(small only) {      
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column; 
+    }
+    @include breakpoint(medium only) {      
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column; 
+    }
+   
   }
+
 }
 
 

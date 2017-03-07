@@ -21,7 +21,7 @@
 						font-family: $font-family;
 					}
 				}
-				@include breakpoint(small only) {
+				@include breakpoint(xs-small only) {
 					width: 10%;
 		    	img {
 		    		margin-right:-10px;

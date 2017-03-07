@@ -12,17 +12,23 @@
 				margin-bottom: 20px;
 				font-size: 30px;
 			}
-			.user-info {
-						
-				margin-left: -160px;				
+			.user-info {														
 				.admin-info {
-					margin-left: 10px;
+					margin-left:10px;
 					line-height: 20px;
 					color: #0a184a;
 
 					img {
 						display: flex;
 					}
+				}
+			}
+			@include breakpoint(xs-small only) {
+				h3 {
+					margin-left: 20px;
+				}
+				.user-info {
+					margin-left: 20px;
 				}
 			}	
 		}
@@ -53,7 +59,41 @@
 				.trans {
 					line-height: 40px;
 				}
+				@include breakpoint(xs-small only) {
+					margin-bottom: 40px;
+					margin-left: -150px;
+				}
+				@include breakpoint(medium only) {
+					margin-bottom: 50px;
+					margin-left: -70px;
+				}
 			}
+			@include breakpoint(xs-small only) {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+				margin-top: 50px;
+			}
+			@include breakpoint(medium only) {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+				margin-top: 0px;
+			}
+			@include breakpoint(large only) {
+				margin-left: -20px;	
+			}		
 		}
-	}
+		@include breakpoint(small only) {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: column;
+			flex-direction: column; 
+		}	
+		@include breakpoint(medium only) {
+			display: flex;
+		}			
+	}	  
 }
