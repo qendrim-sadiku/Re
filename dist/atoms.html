@@ -103,7 +103,13 @@
 												<a href="atoms.html#forms.days-select">Days Select</a>
 											</li>
 											<li>
+												<a href="atoms.html#forms.diferent-input">Diferent Input</a>
+											</li>
+											<li>
 												<a href="atoms.html#forms.hours-select">Hours Select</a>
+											</li>
+											<li>
+												<a href="atoms.html#forms.info-select">Info Select</a>
 											</li>
 											<li>
 												<a href="atoms.html#forms.radio">Radio</a>
@@ -306,6 +312,10 @@
 							</li>
 								<li>
 								<a href="organisms.html#reservation">Reservation</a>
+		
+							</li>
+								<li>
+								<a href="organisms.html#reservation-price">Reservation Price</a>
 		
 							</li>
 								<li>
@@ -678,6 +688,42 @@
 </div>
 
 		</div>
+		<div class="f-item-group" id="forms.diferent-input">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Diferent Input</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<div class="diferent-input">
+	<div class="night">
+		<input type="text" name="" value="15">
+		<span>Naten</span>
+	</div>
+	<div class="day">
+		<input type="text" name="" value="15">
+		<span>Diten</span>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;diferent-input&quot;&gt;
+	&lt;div class&#x3D;&quot;night&quot;&gt;
+		&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; value&#x3D;&quot;15&quot;&gt;
+		&lt;span&gt;Naten&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;day&quot;&gt;
+		&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; value&#x3D;&quot;15&quot;&gt;
+		&lt;span&gt;Diten&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="forms.hours-select">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Hours Select</h3>
@@ -740,6 +786,70 @@
 </div>
 
 		</div>
+		<div class="f-item-group" id="forms.info-select">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Info Select</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<div class="info-select-width">
+	<label for="name">Numri I FUshave </label>
+	<div class="info-select">
+		<div class="info-input">
+		</div>
+		<div class="info-select-options">
+			<ul>
+				<li>
+					<span style="display:none">FUshat</span>
+				</li>
+				<li>
+					<span>1 Fush</span>
+				</li>
+				<li>
+					<span>2 Fusha</span>
+				</li>
+				<li>
+					<span>3 Fusha</li>
+                    <li >
+                        <span>4 Fusha</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;info-select-width&quot;&gt;
+	&lt;label for&#x3D;&quot;name&quot;&gt;Numri I FUshave &lt;/label&gt;
+	&lt;div class&#x3D;&quot;info-select&quot;&gt;
+		&lt;div class&#x3D;&quot;info-input&quot;&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;info-select-options&quot;&gt;
+			&lt;ul&gt;
+				&lt;li&gt;
+					&lt;span style&#x3D;&quot;display:none&quot;&gt;FUshat&lt;/span&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;span&gt;1 Fush&lt;/span&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;span&gt;2 Fusha&lt;/span&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;span&gt;3 Fusha&lt;/li&gt;
+                    &lt;li &gt;
+                        &lt;span&gt;4 Fusha&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="forms.radio">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Radio</h3>
@@ -751,24 +861,48 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<input type="radio" name="groupName" id="radio1" />
-<label for="radio1">Radio 1</label>
-
-<input type="radio" name="groupName" id="radio2" />
-<label for="radio2">Radio 2</label>
-
-<input type="radio" name="groupName" id="radio3" />
-<label for="radio3">Radio 3</label>
+	<div class="radio-buttons">
+	<label for="none">Tjera</label>
+	<div class="options">
+		<label title="item1">
+                    <input type="radio" name="foo" value="0" /> 
+                    Transport
+                    <img />												
+        </label>
+		<label title="item2">
+                    <input type="radio" name="foo" value="1" />
+                    Dorza
+                    <img />
+            </label>
+		<label title="item3">
+                    <input type="radio" name="foo" value="2" />
+                    Nxemje									
+                    <img />
+            </label>
+	</div>
+</div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;groupName&quot; id&#x3D;&quot;radio1&quot; /&gt;
-&lt;label for&#x3D;&quot;radio1&quot;&gt;Radio 1&lt;/label&gt;
-
-&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;groupName&quot; id&#x3D;&quot;radio2&quot; /&gt;
-&lt;label for&#x3D;&quot;radio2&quot;&gt;Radio 2&lt;/label&gt;
-
-&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;groupName&quot; id&#x3D;&quot;radio3&quot; /&gt;
-&lt;label for&#x3D;&quot;radio3&quot;&gt;Radio 3&lt;/label&gt;</code></pre>
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;radio-buttons&quot;&gt;
+	&lt;label for&#x3D;&quot;none&quot;&gt;Tjera&lt;/label&gt;
+	&lt;div class&#x3D;&quot;options&quot;&gt;
+		&lt;label title&#x3D;&quot;item1&quot;&gt;
+                    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;foo&quot; value&#x3D;&quot;0&quot; /&gt; 
+                    Transport
+                    &lt;img /&gt;												
+        &lt;/label&gt;
+		&lt;label title&#x3D;&quot;item2&quot;&gt;
+                    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;foo&quot; value&#x3D;&quot;1&quot; /&gt;
+                    Dorza
+                    &lt;img /&gt;
+            &lt;/label&gt;
+		&lt;label title&#x3D;&quot;item3&quot;&gt;
+                    &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;foo&quot; value&#x3D;&quot;2&quot; /&gt;
+                    Nxemje									
+                    &lt;img /&gt;
+            &lt;/label&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
 		</div>

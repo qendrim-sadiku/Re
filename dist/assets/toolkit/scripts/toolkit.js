@@ -14170,6 +14170,22 @@
 		});
 	});
 
+	$(function () {
+		if ($('.info-select-options ul li').hasClass('selected')) {
+			$('.info-select .info-input').text($('.info-select-options li.selected > span:first-child').text());
+		} else {
+			$('.info-select .info-input').text($('.info-select-options li:first-child > span:first-child').text());
+		}
+		$('.info-select').click(function () {
+			$('.info-select-options').toggleClass('visible');
+		});
+		$('.info-select-options li').click(function () {
+			$('info-select').removeClass('selected');
+			$(this).addClass('selected');
+			$('.info-select .info-input').text($(this).find('span:first-child').text());
+		});
+	});
+
 /***/ },
 /* 324 */
 /***/ function(module, exports) {
