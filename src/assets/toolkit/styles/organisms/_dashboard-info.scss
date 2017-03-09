@@ -26,6 +26,21 @@
 			font-weight: 300;
 			font-size: 13px;
 		}
+		@include breakpoint(xs-small only) {
+			@include grid-column(12);
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		@include breakpoint(small only) {
+			@include grid-column(12);
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		@include breakpoint(medium only) {
+			@include grid-column(12);
+			padding-left: 10px;
+			padding-right: 10px;
+		}    
 	}
 	.reservation-price {
 		margin-top:-5px;
@@ -66,6 +81,12 @@
 					font-weight: 300;
 				}
 				margin-right: 40px;
+				@include breakpoint(xs-small only) {
+					width:100%;
+				}
+				@include breakpoint(small only) {
+					width:100%;
+				}
 			}
 			.day {
 				width: 50%;
@@ -82,7 +103,25 @@
 					line-height: 44px;
 					font-weight: 300;
 				}	
-			}			
+				@include breakpoint(xs-small only) {
+					width:100%;
+				}
+				@include breakpoint(small only) {
+					width:100%;
+				}		
+			}
+			@include breakpoint(xs-small only) {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+			}
+			@include breakpoint(small only) {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+			}					
 		}
 		.radio-button-with-select {
 			display: flex;
@@ -128,11 +167,47 @@
 						}
 					}				
 				}					
-			}			
+			}	
+			@include breakpoint(xs-small only) {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+			}		
+			@include breakpoint(small only) {
+				display: -webkit-flex;
+				display: flex;			
+			}		
 		}
 		input[type='submit'] {
 			margin-left:190px;
-			
+			@include breakpoint(xs-small only) {
+				margin-left: 0;
+			}
+			@include breakpoint(small only) {
+				margin-left: 70px;
+			}
+			@include breakpoint(medium only) {
+				margin-left: 250px;
+			}    
+			@include breakpoint(large only) {
+				margin-left: 0;
+			}		
 		}
+		@include breakpoint(xs-small only) {
+			@include grid-column(12);
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		@include breakpoint(small only) {
+			@include grid-column(12);
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		@include breakpoint(medium only) {
+			@include grid-column(12);
+			padding-left: 10px;
+			padding-right: 10px;
+		}    
 	}
 }

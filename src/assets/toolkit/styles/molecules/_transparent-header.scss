@@ -22,12 +22,15 @@
 					font-family: $font-family;
 				}
 			}
-			@include breakpoint(small only) {
-				width: 10%;
-		    	img {
-		    		margin-right:-10px;
-		    	}		    	
-		    }    	
+			@include breakpoint(xs-small only) {
+					display: -webkit-flex;
+					display: flex;
+					-webkit-flex-direction: column;
+					flex-direction: column;
+					float: none;
+					margin-left: 60px;
+					margin-bottom: 20px;
+				}  	
 		}	
 		@include breakpoint(small only) {
 		    width: 100%;

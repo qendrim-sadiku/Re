@@ -1,7 +1,7 @@
 .second-select-width {
   width: 320px;
   margin-right: 2px;
-  z-index: 1;
+  z-index: 0;
   .days-input {
     border: 1px solid transparent;
     background-color:$white; 
@@ -95,13 +95,29 @@
       height: 17px;
       transform: rotate(45deg);
     }
+     @include breakpoint(xs-small only) {
+      position: absolute;
+      top: 65px;
+    }
+     @include breakpoint(small only) {
+      position: absolute;
+      top: 65px;
+    }
   }
-  @include breakpoint(xs-small only) {      
-    width: 100%;    
+  @include breakpoint(xs-small only) {
+    width: 100%;
     margin-bottom: 20px;
+    z-index: 3;
   }
-  @include breakpoint(medium only) {      
-    width: 100%;    
+  @include breakpoint(small only) {
+    width: 100%;
     margin-bottom: 20px;
-  }      
+    z-index: 3;
+  }
+   @include breakpoint(medium only) {
+    width: 50%;
+    float: left;
+    margin-bottom: 20px;
+    z-index: 99;
+  }    
 }

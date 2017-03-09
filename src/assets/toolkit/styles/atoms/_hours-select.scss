@@ -1,7 +1,6 @@
 .third-select-width {
-  width: 320px;
+  width: 370px;
   margin-right: 0px;
-  z-index: 1;
   .hours-input {
     border: 1px solid transparent;
     background-color:$white; 
@@ -22,8 +21,8 @@
       background-repeat: no-repeat;
       background-size: .75rem; 
     }
-     @include breakpoint(small only) {      
-      z-index: 1;
+     @include breakpoint(xs-small only) {      
+      z-index: 0;
     }   
   }
   .hours-select-options {
@@ -96,15 +95,28 @@
       height: 17px;
       transform: rotate(45deg);
     }
+    @include breakpoint(xs-small only) {
+      position: absolute;
+      top: 65px;
+    }
+    @include breakpoint(small only) {
+      position: absolute;
+      top: 65px;
+    }
   }
-  @include breakpoint(xs-small only) {      
-    width: 100%;    
-    margin-bottom: 20px;
-  } 
- @include breakpoint(medium only) {
-    width: 100%;    
+  @include breakpoint(xs-small only) {
+    width: 100%;
     margin-bottom: 20px;
     z-index: 1;
-    
-  }   
+  }
+  @include breakpoint(small only) {
+    width: 100%;
+    margin-bottom: 20px;
+    z-index: 1;
+  }  
+  @include breakpoint(small only) {
+    width: 100%;
+    margin-bottom: 20px;
+    z-index: 1;
+  }  
 }

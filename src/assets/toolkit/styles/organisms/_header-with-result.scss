@@ -23,45 +23,56 @@
 					}
 				}
 				@include breakpoint(xs-small only) {
-					width: 10%;
-		    	img {
-		    		margin-right:-10px;
-			    	}		    	
-			    }    	
+					display: -webkit-flex;
+					display: flex;
+					-webkit-flex-direction: column;
+					flex-direction: column;
+					float: none;
+					margin-left: 60px;
+					margin-bottom: 20px;
+				}
 			}
 				
 		}
 		border-bottom: 1px solid #fff;		
 	}
-	.home-forms {
-		
+	.home-forms {		
 		@include grid-row();
 		display: flex;
 		margin-top: 95px;
 		padding-bottom: 30px;
 		@include breakpoint(xs-small only) {
-		    	width: 100%;
-		    	float: none;		     
-		    	display: -webkit-flex;
-				display: flex;
-				-webkit-flex-direction: column;
-				flex-direction: column; 
-				padding-left: 20px;
-				padding-right: 20px;
-		    }
-		    @include breakpoint(medium only) {
-		    	width: 100%;
-		    	float: none;		     
-		    	display: -webkit-flex;
-				display: flex;
-				-webkit-flex-direction: column;
-				flex-direction: column; 
-				padding-left: 20px;
-				padding-right: 20px;	    			    		    					
-		    }
-		    @include breakpoint(large only) {
-		    	padding-left: 20px;
-		    	padding-right:20px;    			    		    					
-		    }    	 
+			width: 100%;
+			float: none;		     
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: column;
+			flex-direction: column; 
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		@include breakpoint(small only) {
+			width: 100%;
+			float: none;		     
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: column;
+			flex-direction: column; 
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		@include breakpoint(medium only) {
+			width: 100%;
+			float: none;		     
+			display: -webkit-flex;
+			display: flex;
+			
+			padding-left: 20px;
+			padding-right: 20px;	    			    		    					
+		}
+		@include breakpoint(large only) {
+			padding-left: 20px;
+			padding-right:20px;    			    		    					
+		}   	 
 	}	
 }

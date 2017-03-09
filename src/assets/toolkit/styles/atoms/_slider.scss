@@ -27,18 +27,32 @@
 			margin-right: 20px;
 			font-size: 20px;
 		}
-		@include breakpoint(small only) {
+		@include breakpoint(xs-small only) {
 			padding: 10px;
 			bottom:-15px;
-			right: 21px;
+			right: 1px;
 			i {
 				margin-right: 10px;
 			}			    		    	
-		}    	
+		}
+    @include breakpoint(small only) {
+			padding: 10px;
+			bottom:-15px;
+			right: 1px;
+			i {
+				margin-right: 10px;
+			}			    		    	
+		}    	    	
 	}
 	img {
 		width: 100%;
+    @include breakpoint(xs-small only) {
+        height: 200px;
+      }
 	}
+  @include breakpoint(xs-small only) {
+	    border-top:none;		    		    	
+		}    	
 }
 
 
@@ -55,6 +69,12 @@
   -moz-transition: all 0.2s linear;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
+  @include breakpoint(xs-small only) {
+   display: none;
+  }
+  @include breakpoint(small only) {
+   display: none;
+  }
 }
 
 
@@ -100,13 +120,6 @@
 
 }
 
-.flex-direction-nav .flex-next:after {
- 
-}
-
-.flex-direction-nav .flex-prev:after {
-  
-}
 
 .flex-direction-nav .flex-next:hover,
 .flex-direction-nav .flex-prev:hover {

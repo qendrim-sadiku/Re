@@ -1,5 +1,5 @@
 .calendar-bg {
-    width: 30%;
+    max-width: 30%;
     height: auto;
     background:#23213e;
     padding-bottom: 100px;
@@ -211,18 +211,23 @@
      .ui-datepicker-group-last .ui-datepicker-header,
      .ui-datepicker-group-middle .ui-datepicker-header {
       border-right-width: 0;
-      border-left-width: 1px;
+      border-left-width: 0px;
       background:#23213e;
     }
   }
   table {
         border-collapse: separate;
+       
   }
   label {
     color: $primary;
     position: absolute;
     top: 720px;
     padding-left: 20px;
+    @include breakpoint(xs-small only) {
+     position: absolute;
+     top: 870px;
+    }
   }
   input {
     padding-left:20px;
@@ -231,7 +236,30 @@
     top:750px;
     background:transparent;
     border:none;
+    @include breakpoint(xs-small only) {
+     position: absolute;
+     top: 900px;
+    }
+    @include breakpoint(small only) {
+     position: absolute;
+     top: 950px;
+    }
   }
+  @include breakpoint(xs-small only) {
+			max-width: 100%;
+      margin:0;
+      border:none;
+	}	
+  @include breakpoint(small only) {
+			max-width: 100%;
+      margin:0;
+      border:none;
+	}
+  @include breakpoint(medium only) {
+			max-width: 100%;
+      margin:0;
+      border:none;
+	}						
 }
 
 

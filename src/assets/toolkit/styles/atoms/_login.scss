@@ -18,22 +18,33 @@ $form-radius: $global-radius;
   padding: $form-padding;
   border-radius: $form-radius;
   h4 {
-	color:#0a184a;
-	text-align:center;
-	margin-bottom: 27px;
+    color:#0a184a;
+    text-align:center;
+    margin-bottom: 27px;
+    font-weight: 300;
   }
   p {
   	text-align: center;
   	margin-bottom: 47px;
+    color: #0a184a;
+    opacity: 0.5;
+    font-weight: 300;
   } 
+  a {
+    color: #000000 !important;
+  }
 }
 
 
 input[type='text'] {
 	padding-left:30px;
+  margin: auto;
+  margin-bottom: 30px;
   position: relative;
 	background-image: url('../images/user.png');
 	background-color:#fefefe;
+  color: #0a184a !important;
+  font-weight: 300;
 	background-repeat: no-repeat;
 	background-position: 6px;
 	max-width: 350px;
@@ -42,30 +53,45 @@ input[type='text'] {
 	opacity:0.6;
 }
 input[type='password'] {
+  margin: auto;
 	padding-left:30px;
-   position: relative;
-   background-image: url('../images/lock.png');
-   background-color:#fefefe;
+  position: relative;
+  background-image: url('../images/lock.png');
+  background-color:#fefefe;
 	background-repeat: no-repeat;
 	background-position: 6px;
 	max-width: 350px;
 	height: 48px;
 	border:1px solid #0a184a;
 	opacity:0.6;	
+  @include breakpoint(small only) {
+    
+    margin-bottom: 20px;
+  }
 }
 input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
   &:not(:checked), &:checked {
     position: absolute;
     left: -9999px;
+    
+   
   }
   &:not(:checked) + label, &:checked + label {
     position: relative;
+    margin-top: 10px;
+    margin-right: -2px;
     line-height: 20px;
     padding-left: 1.55em;
     cursor: pointer;
     color: #000000;
     opacity: 0.5;
-    float: left;        
+    float: right;     
+     @include breakpoint(medium only) {
+     margin-right: 100px;
+      margin-bottom: 10px;
+    }   
   }
   &:not(:checked) + label:before, &:checked + label:before {
     content: '';
@@ -114,19 +140,35 @@ input[type="checkbox"] {
       }
     }  
   }
-
 }
 
 input[type='submit'] {		
-	background-color:$primary-color;
+	background-color:#7f98f6;
 	border:none;
 	color:$white;	
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: normal;
 	width:230px;
 	height: 48px;
 	text-align:center;
 	margin-top: 40px;	
-	margin-left: 60px;
+  margin-left: 50px;
+
 	margin-bottom: 40px;
+  @include breakpoint(xs-small only) {
+    margin-left: 30px;
+  }
+  @include breakpoint(small only) {
+    margin:auto;
+    margin-left: 60px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  @include breakpoint(medium only) {
+    margin-left: 170px;
+  }
 }
 
 

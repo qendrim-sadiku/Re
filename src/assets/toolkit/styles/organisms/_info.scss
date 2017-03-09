@@ -5,8 +5,9 @@
 		padding-bottom: 26px;
 		@include grid-row();
 		border-bottom: 2px solid #eaeaea; 
-		display: flex;
+		
 		.text-info {
+			@include grid-column(4);
 			h3 {
 				color: $black;
 				margin-bottom: 20px;
@@ -24,33 +25,30 @@
 				}
 			}
 			@include breakpoint(xs-small only) {
-				h3 {
-					margin-left: 20px;
-				}
-				.user-info {
-					margin-left: 20px;
-				}
+				@include grid-column(12);
 			}	
 		}
 		.info-stuf {
 			display: flex;
-			vertical-align: middle;
-			margin-left: 142px;
-			margin-top: 15px;
+			@include grid-column(8);
 			.each-stuf {
 				padding-left:90px; 
+				
+				
 				span {
 					margin-left: 19px;
 					line-height: 25px;
 					color: #0a184a;
 					font-size: 15px;
 					font-weight: 300;
+					
 				}
 				.dorzat {
 					line-height: 40px;
 				}
 				img {
 					float: left; 
+					
 				}
 				.buss-img {
 					margin-top: 10px;
@@ -58,42 +56,15 @@
 				}
 				.trans {
 					line-height: 40px;
-				}
+				}	
 				@include breakpoint(xs-small only) {
-					margin-bottom: 40px;
-					margin-left: -150px;
-				}
-				@include breakpoint(medium only) {
-					margin-bottom: 50px;
-					margin-left: -70px;
-				}
-			}
+					padding-left: 20px;
+				}			
+			}	
 			@include breakpoint(xs-small only) {
-				display: -webkit-flex;
-				display: flex;
-				-webkit-flex-direction: column;
-				flex-direction: column; 
-				margin-top: 50px;
-			}
-			@include breakpoint(medium only) {
-				display: -webkit-flex;
-				display: flex;
-				-webkit-flex-direction: column;
-				flex-direction: column; 
-				margin-top: 0px;
-			}
-			@include breakpoint(large only) {
-				margin-left: -20px;	
-			}		
-		}
-		@include breakpoint(small only) {
-			display: -webkit-flex;
-			display: flex;
-			-webkit-flex-direction: column;
-			flex-direction: column; 
-		}	
-		@include breakpoint(medium only) {
-			display: flex;
-		}			
+				@include grid-column(12);
+				margin-left: 0px;
+			}									
+		}		
 	}	  
 }

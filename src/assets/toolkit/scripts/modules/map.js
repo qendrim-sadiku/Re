@@ -8,6 +8,10 @@ function init() {
 		if( !$('.google-map').size() ) return;
 
 		var mapOptions = {
+			zoomControl: false,
+  			scaleControl: false,
+			scrollwheel: false,
+  			disableDoubleClickZoom: true,
 			zoom: 5,
 			center: new google.maps.LatLng(37,  38)
 		};

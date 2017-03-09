@@ -1,6 +1,6 @@
 .managment-section-tabs {
 	
-	width:70%;
+	max-width:70%;
 	float: right;
 	
 	.managment-tab {
@@ -18,8 +18,7 @@
 		font-weight: 300;
 		color: #888;
 		-webkit-font-smoothing: antialiased;
-		.tabs {
-			
+		.tabs {			
 			position: relative;
 			padding-left: 0px;
 			padding-right:0px;	
@@ -45,6 +44,16 @@
 					border-radius:0px;
 					margin-left: 0px;
 					color: #6b7897;
+					@include breakpoint(xs-small only) {
+						padding-left: 37px;
+						padding-right: 37px;
+						padding-top: 10px;
+						padding-bottom: 10px;
+						width: 100%;
+						text-align: center;
+						margin-bottom: 15px;
+						margin-top: 15px;
+					}	
 				}
 				a:active {						
 		  			color:#7f98f6;
@@ -54,20 +63,46 @@
 				}
 				a:target {
 				   color:#7f98f6;
-				}		
+				}	
+				
 			}
 			
 		}
 
 		.tabs_item {
 			display: none;
-			padding: 30px 0;
-
-			
-		
-		
+			padding: 30px 0;						
 			&:first-child {display: block;}
 		}
-
+		@include breakpoint(xs-small only) {
+			max-width: 100%;
+			padding-left: 0px;
+		}
+		@include breakpoint(small only) {
+			max-width: 100%;
+			padding-left: 0px;
+		}
+		@include breakpoint(medium only) {
+			max-width: 100%;
+			padding-left: 0px;
+		}		
 	}
+	@include breakpoint(xs-small only) {
+	  max-width: 100%;
+      margin:0;
+      border:none;
+	  float: none;
+	}
+	@include breakpoint(small only) {
+	  max-width: 100%;
+      margin:0;
+      border:none;
+	  float: none;
+	}
+	@include breakpoint(medium only) {
+	  max-width: 100%;
+      margin:0;
+      border:none;
+	  float: none;
+	}		
 }

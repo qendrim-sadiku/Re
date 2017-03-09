@@ -1,8 +1,7 @@
 table {
-	width: 80%; 
+	max-width: 80%; 
 	thead {
 		tr {
-
 			td {
 				background:#f2f8fa;
 				color: #7985a1;
@@ -30,13 +29,24 @@ table {
 		}
 		
 	}
-
-
-
 	tr td:first-child {
 		width: 181px;
     	padding-left: 10px;
     	padding-right: 10px;
-
 	}
+	 @include breakpoint(xs-small only) {
+	  max-width: 100%;
+      margin:0;
+      border:none;
+	}
+	@include breakpoint(small only) {
+	  max-width: 100%;
+      margin:0;
+      border:none;
+	}
+	@include breakpoint(medium only) {
+	  max-width: 100%;
+      margin:0;
+      border:none;
+	}			
 }

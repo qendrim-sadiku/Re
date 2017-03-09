@@ -6,11 +6,9 @@
 		.header {			
 	 		padding-bottom: 80px;
 			z-index: 1;
-			border-bottom: 1px solid #f2f8fa;		
-				
+			border-bottom: 1px solid #f2f8fa;						
 			.header-padding {
-				padding-top:30px;	
-				
+				padding-top:30px;					
 				.logo-section {
 					display: flex;
 					float: left;
@@ -25,13 +23,21 @@
 							font-family: $font-family;
 						}
 					}
-
 					@include breakpoint(xs-small only) {
 						width: 10%;
 			    	img {
 			    		margin-right:-10px;
 				    	}		    	
-				    }    	
+				    }    
+					@include breakpoint(xs-small only) {
+						display: -webkit-flex;
+						display: flex;
+						-webkit-flex-direction: column;
+						flex-direction: column; 
+						float: none;
+						margin-left: 70px;
+						margin-bottom: 50px;
+					}	
 				}	
 				.log-out {
 					float: right;
@@ -39,10 +45,29 @@
 					vertical-align: middle;
 					margin-top: 10px;
 					font-weight: 500;
-					font-size: 15px;				
+					font-size: 15px;	
+					@include breakpoint(xs-small only) {
+						float: none;						
+						margin-left: 130px;
+						font-size: 18px;
+					}
+					@include breakpoint(small only) {						
+						font-size: 18px;
+					} 	 			
 				}	
-
-			}				
+			}
+			@include breakpoint(small only) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			@include breakpoint(medium only) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			@include breakpoint(large only) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}										
 		}
 		.area-and-user {
 			margin-top: 27px;
@@ -68,20 +93,58 @@
 					content: '';
 					height: 48px;
 					width: 2px;
-					background:$white;				
+					background:$white;	
+					@include breakpoint(xs-small only) {
+						display: none;
+					}
+					@include breakpoint(small only) {
+						display: none;
+					}				
+				}
+				@include breakpoint(xs-small only) {
+					margin-left: 50px;
+					margin-bottom: 20px;
+				}
+				@include breakpoint(small only) {
+					margin-left: 90px;
+					margin-bottom: 20px;
 				}
 			}
 			.area-links {
 				margin-left: 100px;
 				margin-top: 12px;
 				a {
-					text-transform: uppercase;
-					
+					text-transform: uppercase;					
 					color: $white;
 					font-size: 15px;
 					font-weight: 500;
 					padding-right: 30px;
 				}
+				@include breakpoint(small only) {
+						float: none;						
+						margin-left: 130px;
+						font-size: 18px;
+					} 	
+			}
+			@include breakpoint(xs-small only) {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+			}
+			@include breakpoint(small only) {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column; 
+			}
+			@include breakpoint(medium only) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}	
+			@include breakpoint(large only) {
+				padding-left: 20px;
+				padding-right: 20px;
 			}
 		}		
 	}	
