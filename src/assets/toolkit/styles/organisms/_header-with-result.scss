@@ -73,6 +73,29 @@
 		@include breakpoint(large only) {
 			padding-left: 20px;
 			padding-right:20px;    			    		    					
-		}   	 
+		}
+		.open-search {				
+			z-index: 0;		
+			background: #5b74d6;				
+			margin: 0;				
+			width: 162px;
+			height: 47px;
+			text-indent: -9999px;
+			background-image: url('../images/search.svg');
+			background-repeat: no-repeat;
+			background-position: 70px;
+			@include breakpoint(xs-small only) {      	   
+				margin-bottom: 20px;
+				text-align: center;
+				margin:auto;
+			}   
+			@include breakpoint(small only) {      	   
+			
+			}
+			@include breakpoint(medium only) {
+				width: 30%;
+				background-position: 50px;
+			}    	
+		} 	 
 	}	
 }
