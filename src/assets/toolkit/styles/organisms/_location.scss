@@ -8,16 +8,19 @@
 		.location-info {
 			@include grid-column(5);
 			h4 {
+				font-family: $alt-font-family;
 				font-size: 16px;
 				color: #0a184a;
 				margin-bottom: 37px;
 				text-align: left;
 			}
 			p {
+				font-family: $alt-font-family;
 				text-align:left; 
 				color: #0a184a;
+				line-height: 1.63;
 				opacity: 0.5;
-				font-size: 15px;
+				font-size: 16px;
 				font-weight: 300;
 			}
 			@include breakpoint(xs-small only) {
@@ -48,6 +51,7 @@
 			margin-right: 9px;
 		}
 		h4 {
+			font-family: $alt-font-family;
 			float: right;
 			color: #0a184a;
 			font-size: 15px;

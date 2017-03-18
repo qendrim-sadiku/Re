@@ -1,16 +1,19 @@
 .calendar-bg {
-    max-width: 30%;
-    height: auto;
+    width: 30%;
     background:#23213e;
     padding-bottom: 100px;
-    border:none;
+    border:none;    
+    padding-left:0px;
+    padding-right:0px;
   .ui-datepicker {
+    width: 100%;
     background:#23213e;
-    float: left;
+    margin:auto;
+    vertical-align: center;
+    justify-content: center;
     display: none;
     padding-top: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+  
     .ui-datepicker-header {
       background:#23213e;
       border:none;
@@ -61,10 +64,10 @@
       //top: 1px;
     }
     .ui-datepicker-prev {
-      right: 120px;
+      left: 0px;
     }
     .ui-datepicker-next {
-      right: 85px;
+      left: 40px;
     }
     .ui-datepicker-prev-hover {
       
@@ -79,7 +82,7 @@
     .ui-datepicker-title {
       margin:  1em;
       line-height: 1.8em;
-      text-align: left;
+      text-align: right;
       color: #6b7897;
       font-weight: bold;
       text-transform: uppercase;
@@ -95,18 +98,18 @@
     }
     table {
       background:#23213e;      
-      width: 100%;
+      
       font-size: .9em;
       border:none;
       margin:0;
     }
     th {
       background:#23213e;
-      
-      text-align: center;
+
+      text-align: left;
       font-weight: normal;
       border: 0;
-      color: #7f98f6  ;
+      color: #7f98f6;
       
 
     }

@@ -2,15 +2,15 @@
 // BaseType
 //
 
-@import '../../toolkit/fonts/Montserrat/stylesheet.css';
+@import '../../toolkit/fonts/GothamRounded/stylesheet.css';
 
-$font-family: 'Montserrat', sans-serif;
+$font-family:"Gotham Rounded";
 $base-font-family: $font-family;
 $sans-font-family: $font-family;
 $body-font-family: $font-family;
 $sans-font-family-semibold: $font-family;
 $sans-font-family-bold: $font-family;
-$alt-font-family: "Montserrat", Helvetica, Arial, Verdana, sans-serif;
+$alt-font-family: "Gotham Rounded Book";
 $serif-font-family: "Droid Serif", Georgia, Times, serif;
 $fancy-serif-font-family: $serif-font-family;
 
@@ -33,6 +33,7 @@ $h3-font-size-large: rem-calc(24);
 $font-weight-normal: 400;
 $type-weight: (
 	light: 300,
+	normal:500,
 	regular: 400,
 	semi: 600,
 	bold: 700,

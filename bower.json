@@ -17,8 +17,7 @@
   ],
   "devDependencies": {
     "jquery": "~2.1.4",
-    "foundation-sites": "~6.2.4",
-    "animate.css": "^3.5.2"
+    "foundation-sites": "~6.2.4"
   },
   "scripts": {
     "gulp": "gulp",
@@ -36,8 +35,11 @@
     "Scut": "scut#^1.4.0",
     "font-awesome": "fontawesome#^4.6.3",
     "normalize-css": "^5.0.0",
-    "slick": "*",
+    "jquery-ui": "^1.12.1",
+    "animate.css": "^3.5.2",
+    "jquery-nice-select": "^1.1.0",
+    "flexslider": "^2.6.3",
     "remodal": "^1.1.1",
-    "jquery-ui": "^1.12.1"
+    "jquery": "^3.2.0"
   }
 }

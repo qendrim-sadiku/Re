@@ -34,19 +34,13 @@ var foundationTabs = require('../../vendor/foundation-sites/js/foundation.tabs.j
 
 //require('smoothstate/jquery.smoothState.min.js');
 // var smoothState = require('./jquery.smoothState.min.js');
-
-// Loading flexslider from node
-var flexslider = require ('../../vendor/flexslider/jquery.flexslider-min.js');	
-var flexslider = require ('../../vendor/flexslider/jquery.flexslider-min.js');	
-
-// Loading remodal from node
-
-var remodal = require ('../../vendor/remodal/dist/remodal.js');
-	
-// Loading Jquery UI from node
+var flexslider = require('../../vendor/flexslider/jquery.flexslider-min');
 
 // console.log($);
 // $('h1').fadeOut(2000);
+var jqueryui = require('../../vendor/jquery-ui/jquery-ui.min.js'); 
+var calendar = require('../../vendor/jquery-ui/ui/widgets/datepicker.js');
+
 
 // Use for custom Pattern Libary Modules
 // var fooModule = require('./foo-module');
@@ -54,12 +48,15 @@ var remodal = require ('../../vendor/remodal/dist/remodal.js');
 
 require('./modules/map');
 require('./modules/acordion');
+require('./modules/dropdown');
 require('./modules/tabs');
 require('./modules/file-input');
-require('./modules/animatedModal');
-require('./modules/modal');
-require('./modules/calendar');
+require('./modules/jquery.nice-select.min');
+require('./modules/select');
 require('./modules/slider');
+require('./modules/add-class');
+require('./modules/tabs');
+require('./modules/calendar');
 
 // Finally, you can drop test JavaScript here...
 $(document).ready(function () {

@@ -14,40 +14,7 @@
       overflow: hidden;
       margin-bottom: 50px;
     }   
-    .place-img {
-       img {
-        float: left;
-        margin-right: 37px;
-      }
-      @include breakpoint(xs-small only) {
-        width: 100%;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column; 
-        img {
-         width: 100%;
-         margin-bottom: 20px;
-        }
-      }
-      @include breakpoint(small only) {
-        width: 100%;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column; 
-        img {
-         width: 100%;
-         margin-bottom: 20px;
-        }
-      }
-      @include breakpoint(medium only) {
-        img {
-          width: 100%;
-          height: 300px;
-        }
-      }
-    }   
+    
   }
   @include breakpoint(xs-small only) {
     width: 100%;
@@ -64,6 +31,40 @@
   cursor: pointer;
   border-bottom: 1px solid #eaeaea;
   padding-bottom: 21px;
+  .place-img {
+     img {
+      float: left;
+      margin-right: 37px;
+    }
+    @include breakpoint(xs-small only) {
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column; 
+      img {
+       width: 100%;
+       margin-bottom: 20px;
+      }
+    }
+    @include breakpoint(small only) {
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column; 
+      img {
+       width: 100%;
+       margin-bottom: 20px;
+      }
+    }
+    @include breakpoint(medium only) {
+      img {
+        width: 100%;
+        height: 300px;
+      }
+    }
+  } 
   .location-and-text {
     display: flex;
     justify-content: space-between; 
@@ -73,6 +74,8 @@
         margin-right: 9px;
       }
       h4 {
+        font-family: $alt-font-family;
+        color: #0b184a;
         margin-top: 10px;
         margin-bottom: 86px;
         font-size: 20px;
@@ -85,20 +88,28 @@
          @include breakpoint(small only)  {
           margin-bottom: 40px;
          }
+         a {
+          color: #0b184a;
+         }
       }
       p {
         float: left;
         margin-right: 44px;
-        color: #0a184a;
-        font-weight: 300;
+        font-family: $alt-font-family;
+
+        font-weight: regular;
         @include breakpoint(xs-small only)  {
           float: none;
          }
         @include breakpoint(small only)  {
           float: none;
          }
+         a {
+          color: #0a184a;
+         }
       }
       span {
+        font-family: $alt-font-family;
         position: relative;
         color: #0a184a;
         opacity: 0.5;
@@ -116,18 +127,17 @@
     }
     .call-info-txt {     
       .info-p {
-        margin-top: 20px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        padding-left: 16px;
-        padding-right: 45px;
-        border: solid 1px #7f98f6;
-        margin-bottom: 51px;
+        border:1px solid #7f98f6;
+        text-align:center;
+        height: 48px;
+        width: 160px;
+        line-height: 48px;
         color: #0a184a;
-        font-size: 14px;
-
-        font-weight: 300;
-
+        font-family: $alt-font-family;
+        font-size: 16px;
+        font-weight: regular;
+        margin-bottom: 50px;
+        margin-top: 10px; 
         img {
           margin-right: 14px;
           color: #0a184a;
@@ -141,6 +151,7 @@
         }
       }
       .phone-number {
+        font-family: $alt-font-family;
         color: #0a184a;
         font-size: 14px;
         font-weight: 300;

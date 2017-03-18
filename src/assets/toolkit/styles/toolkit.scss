@@ -12,11 +12,9 @@
 // 2. Vendors
 @import
 	'../../vendor/normalize-css/normalize',
-	'../../vendor/Scut/dist/scut',
+	'../../vendor/Scut/dist/scut',	
 	'../../vendor/flexslider/flexslider',
-	'../../vendor/remodal/dist/remodal-default-theme',	
-	'../../vendor/remodal/dist/remodal',	
-	'../../vendor/foundation-sites/scss/foundation',
+	'../../vendor/foundation-sites/scss/foundation',	
 	'../../vendor/font-awesome/scss/font-awesome';
 
 @include foundation-global-styles;
